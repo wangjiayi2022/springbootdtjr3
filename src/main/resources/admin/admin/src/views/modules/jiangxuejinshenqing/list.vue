@@ -12,6 +12,7 @@
                       v-model="searchForm.jiangxuejinmingcheng" placeholder="奖学金名称" clearable></el-input>
             <el-input v-if="contents.inputIcon == 0" v-model="searchForm.jiangxuejinmingcheng" placeholder="奖学金名称"
                       clearable></el-input>
+
           </el-form-item>
           <el-form-item :label="contents.inputTitle == 1 ? '奖学金类型' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"

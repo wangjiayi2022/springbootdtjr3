@@ -25,6 +25,13 @@ const menu = {
             }, {
                 "child": [{
                     "buttons": ["新增", "查看", "修改", "删除"],
+                    "menu": "学校奖学金负责人",
+                    "menuJump": "列表",
+                    "tableName": "xuexiaojxjfzr"
+                }], "menu": "学校奖学金负责人管理"
+            }, {
+                "child": [{
+                    "buttons": ["新增", "查看", "修改", "删除"],
                     "menu": "教务处",
                     "menuJump": "列表",
                     "tableName": "jiaowuchu"
