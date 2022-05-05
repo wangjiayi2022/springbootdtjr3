@@ -1,5 +1,5 @@
 const base = {
-    url : "http://localhost:8080/${schemaname}/",
+    url: "http://localhost:8080/${schemaname}/",
     name: "${schemaname}"
 }
 

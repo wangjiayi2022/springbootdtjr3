@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dao.FudaoyuanDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.FudaoyuanEntity" id="fudaoyuanMap">
         <result property="fudaoyuangonghao" column="fudaoyuangonghao"/>
         <result property="fudaoyuanxingming" column="fudaoyuanxingming"/>
@@ -13,29 +13,30 @@
         <result property="jiaoshiyouxiang" column="jiaoshiyouxiang"/>
     </resultMap>
 
-	<select id="selectListVO"
-		resultType="com.entity.vo.FudaoyuanVO" >
-		SELECT * FROM fudaoyuan  fudaoyuan         
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectVO"
-		resultType="com.entity.vo.FudaoyuanVO" >
-		SELECT  fudaoyuan.* FROM fudaoyuan  fudaoyuan
- 		<where> 1=1 ${ew.sqlSegment}</where>
-	</select>
+    <select id="selectListVO"
+            resultType="com.entity.vo.FudaoyuanVO">
+        SELECT * FROM fudaoyuan fudaoyuan
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectVO"
+            resultType="com.entity.vo.FudaoyuanVO">
+        SELECT fudaoyuan.* FROM fudaoyuan fudaoyuan
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
 
     <select id="selectListView"
-		resultType="com.entity.view.FudaoyuanView" >
+            resultType="com.entity.view.FudaoyuanView">
 
-		SELECT  fudaoyuan.* FROM fudaoyuan  fudaoyuan 	        
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectView"
-		resultType="com.entity.view.FudaoyuanView" >
-		SELECT * FROM fudaoyuan  fudaoyuan <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	
+        SELECT fudaoyuan.* FROM fudaoyuan fudaoyuan
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.entity.view.FudaoyuanView">
+        SELECT * FROM fudaoyuan fudaoyuan
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
 </mapper>

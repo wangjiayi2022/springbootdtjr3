@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dao.JiangchengxinxiDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.JiangchengxinxiEntity" id="jiangchengxinxiMap">
         <result property="biaoti" column="biaoti"/>
         <result property="xueshengzhanghao" column="xueshengzhanghao"/>
@@ -13,29 +13,30 @@
         <result property="fabushijian" column="fabushijian"/>
     </resultMap>
 
-	<select id="selectListVO"
-		resultType="com.entity.vo.JiangchengxinxiVO" >
-		SELECT * FROM jiangchengxinxi  jiangchengxinxi         
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectVO"
-		resultType="com.entity.vo.JiangchengxinxiVO" >
-		SELECT  jiangchengxinxi.* FROM jiangchengxinxi  jiangchengxinxi
- 		<where> 1=1 ${ew.sqlSegment}</where>
-	</select>
+    <select id="selectListVO"
+            resultType="com.entity.vo.JiangchengxinxiVO">
+        SELECT * FROM jiangchengxinxi jiangchengxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectVO"
+            resultType="com.entity.vo.JiangchengxinxiVO">
+        SELECT jiangchengxinxi.* FROM jiangchengxinxi jiangchengxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
 
     <select id="selectListView"
-		resultType="com.entity.view.JiangchengxinxiView" >
+            resultType="com.entity.view.JiangchengxinxiView">
 
-		SELECT  jiangchengxinxi.* FROM jiangchengxinxi  jiangchengxinxi 	        
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectView"
-		resultType="com.entity.view.JiangchengxinxiView" >
-		SELECT * FROM jiangchengxinxi  jiangchengxinxi <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	
+        SELECT jiangchengxinxi.* FROM jiangchengxinxi jiangchengxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.entity.view.JiangchengxinxiView">
+        SELECT * FROM jiangchengxinxi jiangchengxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
 </mapper>

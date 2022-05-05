@@ -1,6 +1,8 @@
 <template>
-  <el-breadcrumb class="app-breadcrumb" separator="⭐" style="height:50px;backgroundColor:rgba(173,10,255,0.35);borderRadius:20px;borderWidth:2px;borderColor:rgba(255, 215, 0, 1);">
-    <transition-group name="breadcrumb" class="box" :style="2==1?'justifyContent:flex-start;':2==2?'justifyContent:center;':'justifyContent:flex-end;'">
+  <el-breadcrumb class="app-breadcrumb" separator="⭐"
+                 style="height:50px;backgroundColor:rgba(173,10,255,0.35);borderRadius:20px;borderWidth:2px;borderColor:rgba(255, 215, 0, 1);">
+    <transition-group name="breadcrumb" class="box"
+                      :style="2==1?'justifyContent:flex-start;':2==2?'justifyContent:center;':'justifyContent:flex-end;'">
       <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
         <span v-if="item.redirect==='noRedirect'||index==levelList.length-1" class="no-redirect">{{ item.name }}</span>
         <a v-else @click.prevent="handleLink(item)">{{ item.name }}</a>
@@ -11,7 +13,8 @@
 
 <script>
 import pathToRegexp from 'path-to-regexp'
-import { generateTitle } from '@/utils/i18n'
+import {generateTitle} from '@/utils/i18n'
+
 export default {
   data() {
     return {
@@ -34,7 +37,7 @@ export default {
       let route = this.$route
       let matched = route.matched.filter(item => item.meta)
       const first = matched[0]
-      matched = [{ path: '/index' }].concat(matched)
+      matched = [{path: '/index'}].concat(matched)
 
       this.levelList = matched.filter(item => item.meta)
     },
@@ -47,12 +50,12 @@ export default {
     },
     pathCompile(path) {
       // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
-      const { params } = this.$route
+      const {params} = this.$route
       var toPath = pathToRegexp.compile(path)
       return toPath(params)
     },
     handleLink(item) {
-      const { redirect, path } = item
+      const {redirect, path} = item
       if (redirect) {
         this.$router.push(redirect)
         return
@@ -60,23 +63,23 @@ export default {
       this.$router.push(path)
     },
     breadcrumbStyleChange(val) {
-      this.$nextTick(()=>{
-        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__separator').forEach(el=>{
+      this.$nextTick(() => {
+        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__separator').forEach(el => {
           el.innerText = "⭐"
           el.style.color = "#C0C4CC"
         })
-        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner a').forEach(el=>{
+        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner a').forEach(el => {
           el.style.color = "rgba(99, 233, 242, 1)"
         })
-        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner .no-redirect').forEach(el=>{
+        document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner .no-redirect').forEach(el => {
           el.style.color = "rgba(152, 245, 134, 1)"
         })
 
         let str = "vertical"
-        if("vertical" === str) {
+        if ("vertical" === str) {
           let headHeight = "60px"
           headHeight = parseInt(headHeight) + 10 + 'px'
-          document.querySelectorAll('.app-breadcrumb').forEach(el=>{
+          document.querySelectorAll('.app-breadcrumb').forEach(el => {
             el.style.marginTop = headHeight
           })
         }

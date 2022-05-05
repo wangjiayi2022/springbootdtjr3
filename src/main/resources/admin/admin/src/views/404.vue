@@ -27,15 +27,18 @@ export default {
   height: 100%;
   min-height: 900px;
   text-align: center;
+
   .backgroud {
     display: inline-block;
     width: 200px;
     height: 200px;
     margin-top: 80px;
   }
-  .main-text{
+
+  .main-text {
     margin-top: 80px;
   }
+
   .text {
     font-size: 24px;
     font-weight: bold;

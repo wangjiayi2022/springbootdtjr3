@@ -38,8 +38,9 @@ import com.utils.CommonUtil;
 /**
  * 奖学金申请
  * 后端接口
- * @author 
- * @email 
+ *
+ * @author
+ * @email
  * @date 2021-01-28 10:57:06
  */
 @RestController
@@ -47,60 +48,59 @@ import com.utils.CommonUtil;
 public class JiangxuejinshenqingController {
     @Autowired
     private JiangxuejinshenqingService jiangxuejinshenqingService;
-    
 
 
     /**
      * 后端列表
      */
     @RequestMapping("/page")
-    public R page(@RequestParam Map<String, Object> params,JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request){
+    public R page(@RequestParam Map<String, Object> params, JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request) {
 
-		String tableName = request.getSession().getAttribute("tableName").toString();
-		if(tableName.equals("xuesheng")) {
-			jiangxuejinshenqing.setXueshengzhanghao((String)request.getSession().getAttribute("username"));
-		}
+        String tableName = request.getSession().getAttribute("tableName").toString();
+        if (tableName.equals("xuesheng")) {
+            jiangxuejinshenqing.setXueshengzhanghao((String) request.getSession().getAttribute("username"));
+        }
         EntityWrapper<JiangxuejinshenqingEntity> ew = new EntityWrapper<JiangxuejinshenqingEntity>();
-		PageUtils page = jiangxuejinshenqingService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, jiangxuejinshenqing), params), params));
+        PageUtils page = jiangxuejinshenqingService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, jiangxuejinshenqing), params), params));
         return R.ok().put("data", page);
     }
-    
+
     /**
      * 前端列表
      */
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params,JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request){
+    public R list(@RequestParam Map<String, Object> params, JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request) {
         EntityWrapper<JiangxuejinshenqingEntity> ew = new EntityWrapper<JiangxuejinshenqingEntity>();
-		PageUtils page = jiangxuejinshenqingService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, jiangxuejinshenqing), params), params));
+        PageUtils page = jiangxuejinshenqingService.queryPage(params, MPUtil.sort(MPUtil.between(MPUtil.likeOrEq(ew, jiangxuejinshenqing), params), params));
         return R.ok().put("data", page);
     }
 
-	/**
+    /**
      * 列表
      */
     @RequestMapping("/lists")
-    public R list( JiangxuejinshenqingEntity jiangxuejinshenqing){
-       	EntityWrapper<JiangxuejinshenqingEntity> ew = new EntityWrapper<JiangxuejinshenqingEntity>();
-      	ew.allEq(MPUtil.allEQMapPre( jiangxuejinshenqing, "jiangxuejinshenqing")); 
+    public R list(JiangxuejinshenqingEntity jiangxuejinshenqing) {
+        EntityWrapper<JiangxuejinshenqingEntity> ew = new EntityWrapper<JiangxuejinshenqingEntity>();
+        ew.allEq(MPUtil.allEQMapPre(jiangxuejinshenqing, "jiangxuejinshenqing"));
         return R.ok().put("data", jiangxuejinshenqingService.selectListView(ew));
     }
 
-	 /**
+    /**
      * 查询
      */
     @RequestMapping("/query")
-    public R query(JiangxuejinshenqingEntity jiangxuejinshenqing){
-        EntityWrapper< JiangxuejinshenqingEntity> ew = new EntityWrapper< JiangxuejinshenqingEntity>();
- 		ew.allEq(MPUtil.allEQMapPre( jiangxuejinshenqing, "jiangxuejinshenqing")); 
-		JiangxuejinshenqingView jiangxuejinshenqingView =  jiangxuejinshenqingService.selectView(ew);
-		return R.ok("查询奖学金申请成功").put("data", jiangxuejinshenqingView);
+    public R query(JiangxuejinshenqingEntity jiangxuejinshenqing) {
+        EntityWrapper<JiangxuejinshenqingEntity> ew = new EntityWrapper<JiangxuejinshenqingEntity>();
+        ew.allEq(MPUtil.allEQMapPre(jiangxuejinshenqing, "jiangxuejinshenqing"));
+        JiangxuejinshenqingView jiangxuejinshenqingView = jiangxuejinshenqingService.selectView(ew);
+        return R.ok("查询奖学金申请成功").put("data", jiangxuejinshenqingView);
     }
-	
+
     /**
      * 后端详情
      */
     @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id){
+    public R info(@PathVariable("id") Long id) {
         JiangxuejinshenqingEntity jiangxuejinshenqing = jiangxuejinshenqingService.selectById(id);
         return R.ok().put("data", jiangxuejinshenqing);
     }
@@ -109,33 +109,31 @@ public class JiangxuejinshenqingController {
      * 前端详情
      */
     @RequestMapping("/detail/{id}")
-    public R detail(@PathVariable("id") Long id){
+    public R detail(@PathVariable("id") Long id) {
         JiangxuejinshenqingEntity jiangxuejinshenqing = jiangxuejinshenqingService.selectById(id);
         return R.ok().put("data", jiangxuejinshenqing);
     }
-    
-
 
 
     /**
      * 后端保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request){
-    	jiangxuejinshenqing.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
-    	//ValidatorUtils.validateEntity(jiangxuejinshenqing);
+    public R save(@RequestBody JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request) {
+        jiangxuejinshenqing.setId(new Date().getTime() + new Double(Math.floor(Math.random() * 1000)).longValue());
+        //ValidatorUtils.validateEntity(jiangxuejinshenqing);
 
         jiangxuejinshenqingService.insert(jiangxuejinshenqing);
         return R.ok();
     }
-    
+
     /**
      * 前端保存
      */
     @RequestMapping("/add")
-    public R add(@RequestBody JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request){
-    	jiangxuejinshenqing.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
-    	//ValidatorUtils.validateEntity(jiangxuejinshenqing);
+    public R add(@RequestBody JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request) {
+        jiangxuejinshenqing.setId(new Date().getTime() + new Double(Math.floor(Math.random() * 1000)).longValue());
+        //ValidatorUtils.validateEntity(jiangxuejinshenqing);
 
         jiangxuejinshenqingService.insert(jiangxuejinshenqing);
         return R.ok();
@@ -145,69 +143,68 @@ public class JiangxuejinshenqingController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request){
+    public R update(@RequestBody JiangxuejinshenqingEntity jiangxuejinshenqing, HttpServletRequest request) {
         //ValidatorUtils.validateEntity(jiangxuejinshenqing);
         jiangxuejinshenqingService.updateById(jiangxuejinshenqing);//全部更新
         return R.ok();
     }
-    
+
 
     /**
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids){
+    public R delete(@RequestBody Long[] ids) {
         jiangxuejinshenqingService.deleteBatchIds(Arrays.asList(ids));
         return R.ok();
     }
-    
+
     /**
      * 提醒接口
      */
-	@RequestMapping("/remind/{columnName}/{type}")
-	public R remindCount(@PathVariable("columnName") String columnName, HttpServletRequest request, 
-						 @PathVariable("type") String type,@RequestParam Map<String, Object> map) {
-		map.put("column", columnName);
-		map.put("type", type);
-		
-		if(type.equals("2")) {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Calendar c = Calendar.getInstance();
-			Date remindStartDate = null;
-			Date remindEndDate = null;
-			if(map.get("remindstart")!=null) {
-				Integer remindStart = Integer.parseInt(map.get("remindstart").toString());
-				c.setTime(new Date()); 
-				c.add(Calendar.DAY_OF_MONTH,remindStart);
-				remindStartDate = c.getTime();
-				map.put("remindstart", sdf.format(remindStartDate));
-			}
-			if(map.get("remindend")!=null) {
-				Integer remindEnd = Integer.parseInt(map.get("remindend").toString());
-				c.setTime(new Date());
-				c.add(Calendar.DAY_OF_MONTH,remindEnd);
-				remindEndDate = c.getTime();
-				map.put("remindend", sdf.format(remindEndDate));
-			}
-		}
-		
-		Wrapper<JiangxuejinshenqingEntity> wrapper = new EntityWrapper<JiangxuejinshenqingEntity>();
-		if(map.get("remindstart")!=null) {
-			wrapper.ge(columnName, map.get("remindstart"));
-		}
-		if(map.get("remindend")!=null) {
-			wrapper.le(columnName, map.get("remindend"));
-		}
+    @RequestMapping("/remind/{columnName}/{type}")
+    public R remindCount(@PathVariable("columnName") String columnName, HttpServletRequest request,
+                         @PathVariable("type") String type, @RequestParam Map<String, Object> map) {
+        map.put("column", columnName);
+        map.put("type", type);
 
-		String tableName = request.getSession().getAttribute("tableName").toString();
-		if(tableName.equals("xuesheng")) {
-			wrapper.eq("xueshengzhanghao", (String)request.getSession().getAttribute("username"));
-		}
+        if (type.equals("2")) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar c = Calendar.getInstance();
+            Date remindStartDate = null;
+            Date remindEndDate = null;
+            if (map.get("remindstart") != null) {
+                Integer remindStart = Integer.parseInt(map.get("remindstart").toString());
+                c.setTime(new Date());
+                c.add(Calendar.DAY_OF_MONTH, remindStart);
+                remindStartDate = c.getTime();
+                map.put("remindstart", sdf.format(remindStartDate));
+            }
+            if (map.get("remindend") != null) {
+                Integer remindEnd = Integer.parseInt(map.get("remindend").toString());
+                c.setTime(new Date());
+                c.add(Calendar.DAY_OF_MONTH, remindEnd);
+                remindEndDate = c.getTime();
+                map.put("remindend", sdf.format(remindEndDate));
+            }
+        }
 
-		int count = jiangxuejinshenqingService.selectCount(wrapper);
-		return R.ok().put("count", count);
-	}
-	
+        Wrapper<JiangxuejinshenqingEntity> wrapper = new EntityWrapper<JiangxuejinshenqingEntity>();
+        if (map.get("remindstart") != null) {
+            wrapper.ge(columnName, map.get("remindstart"));
+        }
+        if (map.get("remindend") != null) {
+            wrapper.le(columnName, map.get("remindend"));
+        }
+
+        String tableName = request.getSession().getAttribute("tableName").toString();
+        if (tableName.equals("xuesheng")) {
+            wrapper.eq("xueshengzhanghao", (String) request.getSession().getAttribute("username"));
+        }
+
+        int count = jiangxuejinshenqingService.selectCount(wrapper);
+        return R.ok().put("count", count);
+    }
 
 
 }

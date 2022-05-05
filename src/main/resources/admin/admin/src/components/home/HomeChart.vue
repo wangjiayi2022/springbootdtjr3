@@ -111,7 +111,7 @@ export default {
       // // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
       //根据窗口的大小变动图表
-      window.onresize = function() {
+      window.onresize = function () {
         myChart.resize();
       };
     }

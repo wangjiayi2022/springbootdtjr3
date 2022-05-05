@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import org.springframework.stereotype.Service;
+
 import java.util.Map;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import com.entity.view.XueshengView;
 
 @Service("xueshengService")
 public class XueshengServiceImpl extends ServiceImpl<XueshengDao, XueshengEntity> implements XueshengService {
-	
+
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -30,33 +31,33 @@ public class XueshengServiceImpl extends ServiceImpl<XueshengDao, XueshengEntity
         );
         return new PageUtils(page);
     }
-    
-    @Override
-	public PageUtils queryPage(Map<String, Object> params, Wrapper<XueshengEntity> wrapper) {
-		  Page<XueshengView> page =new Query<XueshengView>(params).getPage();
-	        page.setRecords(baseMapper.selectListView(page,wrapper));
-	    	PageUtils pageUtil = new PageUtils(page);
-	    	return pageUtil;
- 	}
-    
-    @Override
-	public List<XueshengVO> selectListVO(Wrapper<XueshengEntity> wrapper) {
- 		return baseMapper.selectListVO(wrapper);
-	}
-	
-	@Override
-	public XueshengVO selectVO(Wrapper<XueshengEntity> wrapper) {
- 		return baseMapper.selectVO(wrapper);
-	}
-	
-	@Override
-	public List<XueshengView> selectListView(Wrapper<XueshengEntity> wrapper) {
-		return baseMapper.selectListView(wrapper);
-	}
 
-	@Override
-	public XueshengView selectView(Wrapper<XueshengEntity> wrapper) {
-		return baseMapper.selectView(wrapper);
-	}
+    @Override
+    public PageUtils queryPage(Map<String, Object> params, Wrapper<XueshengEntity> wrapper) {
+        Page<XueshengView> page = new Query<XueshengView>(params).getPage();
+        page.setRecords(baseMapper.selectListView(page, wrapper));
+        PageUtils pageUtil = new PageUtils(page);
+        return pageUtil;
+    }
+
+    @Override
+    public List<XueshengVO> selectListVO(Wrapper<XueshengEntity> wrapper) {
+        return baseMapper.selectListVO(wrapper);
+    }
+
+    @Override
+    public XueshengVO selectVO(Wrapper<XueshengEntity> wrapper) {
+        return baseMapper.selectVO(wrapper);
+    }
+
+    @Override
+    public List<XueshengView> selectListView(Wrapper<XueshengEntity> wrapper) {
+        return baseMapper.selectListView(wrapper);
+    }
+
+    @Override
+    public XueshengView selectView(Wrapper<XueshengEntity> wrapper) {
+        return baseMapper.selectView(wrapper);
+    }
 
 }

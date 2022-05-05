@@ -91,7 +91,7 @@ export default {
           url: `${this.table}/update`,
           method: "post",
           data: this.obj
-        }).then(({ data }) => {
+        }).then(({data}) => {
           if (data && data.code === 0) {
             this.$message({
               message: "支付成功",
@@ -107,7 +107,7 @@ export default {
         });
       });
     },
-    back(){
+    back() {
       this.$router.go(-1);
     }
   }
@@ -117,14 +117,17 @@ export default {
 .container {
   margin: 10px;
   font-size: 14px;
+
   span {
     width: 60px;
   }
+
   .top-content {
     display: flex;
     align-items: center;
     padding: 20px;
   }
+
   .price-content {
     display: flex;
     align-items: center;
@@ -136,14 +139,17 @@ export default {
     font-weight: bold;
     color: red;
   }
+
   .pay-type-content {
     display: flex;
     align-items: center;
     margin-top: 20px;
     flex-wrap: wrap;
+
     span {
       width: 100px;
     }
+
     .pay-type-item {
       display: flex;
       align-items: center;
@@ -154,6 +160,7 @@ export default {
       padding: 20px;
     }
   }
+
   .buton-content {
     margin: 20px;
   }

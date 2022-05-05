@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import org.springframework.stereotype.Service;
+
 import java.util.Map;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import com.entity.view.JiaowuchuView;
 
 @Service("jiaowuchuService")
 public class JiaowuchuServiceImpl extends ServiceImpl<JiaowuchuDao, JiaowuchuEntity> implements JiaowuchuService {
-	
+
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -30,33 +31,33 @@ public class JiaowuchuServiceImpl extends ServiceImpl<JiaowuchuDao, JiaowuchuEnt
         );
         return new PageUtils(page);
     }
-    
-    @Override
-	public PageUtils queryPage(Map<String, Object> params, Wrapper<JiaowuchuEntity> wrapper) {
-		  Page<JiaowuchuView> page =new Query<JiaowuchuView>(params).getPage();
-	        page.setRecords(baseMapper.selectListView(page,wrapper));
-	    	PageUtils pageUtil = new PageUtils(page);
-	    	return pageUtil;
- 	}
-    
-    @Override
-	public List<JiaowuchuVO> selectListVO(Wrapper<JiaowuchuEntity> wrapper) {
- 		return baseMapper.selectListVO(wrapper);
-	}
-	
-	@Override
-	public JiaowuchuVO selectVO(Wrapper<JiaowuchuEntity> wrapper) {
- 		return baseMapper.selectVO(wrapper);
-	}
-	
-	@Override
-	public List<JiaowuchuView> selectListView(Wrapper<JiaowuchuEntity> wrapper) {
-		return baseMapper.selectListView(wrapper);
-	}
 
-	@Override
-	public JiaowuchuView selectView(Wrapper<JiaowuchuEntity> wrapper) {
-		return baseMapper.selectView(wrapper);
-	}
+    @Override
+    public PageUtils queryPage(Map<String, Object> params, Wrapper<JiaowuchuEntity> wrapper) {
+        Page<JiaowuchuView> page = new Query<JiaowuchuView>(params).getPage();
+        page.setRecords(baseMapper.selectListView(page, wrapper));
+        PageUtils pageUtil = new PageUtils(page);
+        return pageUtil;
+    }
+
+    @Override
+    public List<JiaowuchuVO> selectListVO(Wrapper<JiaowuchuEntity> wrapper) {
+        return baseMapper.selectListVO(wrapper);
+    }
+
+    @Override
+    public JiaowuchuVO selectVO(Wrapper<JiaowuchuEntity> wrapper) {
+        return baseMapper.selectVO(wrapper);
+    }
+
+    @Override
+    public List<JiaowuchuView> selectListView(Wrapper<JiaowuchuEntity> wrapper) {
+        return baseMapper.selectListView(wrapper);
+    }
+
+    @Override
+    public JiaowuchuView selectView(Wrapper<JiaowuchuEntity> wrapper) {
+        return baseMapper.selectView(wrapper);
+    }
 
 }

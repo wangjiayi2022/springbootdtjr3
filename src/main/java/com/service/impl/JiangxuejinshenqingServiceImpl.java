@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import org.springframework.stereotype.Service;
+
 import java.util.Map;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import com.entity.view.JiangxuejinshenqingView;
 
 @Service("jiangxuejinshenqingService")
 public class JiangxuejinshenqingServiceImpl extends ServiceImpl<JiangxuejinshenqingDao, JiangxuejinshenqingEntity> implements JiangxuejinshenqingService {
-	
+
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -30,33 +31,33 @@ public class JiangxuejinshenqingServiceImpl extends ServiceImpl<Jiangxuejinshenq
         );
         return new PageUtils(page);
     }
-    
-    @Override
-	public PageUtils queryPage(Map<String, Object> params, Wrapper<JiangxuejinshenqingEntity> wrapper) {
-		  Page<JiangxuejinshenqingView> page =new Query<JiangxuejinshenqingView>(params).getPage();
-	        page.setRecords(baseMapper.selectListView(page,wrapper));
-	    	PageUtils pageUtil = new PageUtils(page);
-	    	return pageUtil;
- 	}
-    
-    @Override
-	public List<JiangxuejinshenqingVO> selectListVO(Wrapper<JiangxuejinshenqingEntity> wrapper) {
- 		return baseMapper.selectListVO(wrapper);
-	}
-	
-	@Override
-	public JiangxuejinshenqingVO selectVO(Wrapper<JiangxuejinshenqingEntity> wrapper) {
- 		return baseMapper.selectVO(wrapper);
-	}
-	
-	@Override
-	public List<JiangxuejinshenqingView> selectListView(Wrapper<JiangxuejinshenqingEntity> wrapper) {
-		return baseMapper.selectListView(wrapper);
-	}
 
-	@Override
-	public JiangxuejinshenqingView selectView(Wrapper<JiangxuejinshenqingEntity> wrapper) {
-		return baseMapper.selectView(wrapper);
-	}
+    @Override
+    public PageUtils queryPage(Map<String, Object> params, Wrapper<JiangxuejinshenqingEntity> wrapper) {
+        Page<JiangxuejinshenqingView> page = new Query<JiangxuejinshenqingView>(params).getPage();
+        page.setRecords(baseMapper.selectListView(page, wrapper));
+        PageUtils pageUtil = new PageUtils(page);
+        return pageUtil;
+    }
+
+    @Override
+    public List<JiangxuejinshenqingVO> selectListVO(Wrapper<JiangxuejinshenqingEntity> wrapper) {
+        return baseMapper.selectListVO(wrapper);
+    }
+
+    @Override
+    public JiangxuejinshenqingVO selectVO(Wrapper<JiangxuejinshenqingEntity> wrapper) {
+        return baseMapper.selectVO(wrapper);
+    }
+
+    @Override
+    public List<JiangxuejinshenqingView> selectListView(Wrapper<JiangxuejinshenqingEntity> wrapper) {
+        return baseMapper.selectListView(wrapper);
+    }
+
+    @Override
+    public JiangxuejinshenqingView selectView(Wrapper<JiangxuejinshenqingEntity> wrapper) {
+        return baseMapper.selectView(wrapper);
+    }
 
 }

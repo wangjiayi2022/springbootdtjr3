@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dao.JiangxuejinxinxiDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.JiangxuejinxinxiEntity" id="jiangxuejinxinxiMap">
         <result property="jiangxuejinmingcheng" column="jiangxuejinmingcheng"/>
         <result property="jiangxuejinleixing" column="jiangxuejinleixing"/>
@@ -15,29 +15,30 @@
         <result property="fabushijian" column="fabushijian"/>
     </resultMap>
 
-	<select id="selectListVO"
-		resultType="com.entity.vo.JiangxuejinxinxiVO" >
-		SELECT * FROM jiangxuejinxinxi  jiangxuejinxinxi         
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectVO"
-		resultType="com.entity.vo.JiangxuejinxinxiVO" >
-		SELECT  jiangxuejinxinxi.* FROM jiangxuejinxinxi  jiangxuejinxinxi
- 		<where> 1=1 ${ew.sqlSegment}</where>
-	</select>
+    <select id="selectListVO"
+            resultType="com.entity.vo.JiangxuejinxinxiVO">
+        SELECT * FROM jiangxuejinxinxi jiangxuejinxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectVO"
+            resultType="com.entity.vo.JiangxuejinxinxiVO">
+        SELECT jiangxuejinxinxi.* FROM jiangxuejinxinxi jiangxuejinxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
 
     <select id="selectListView"
-		resultType="com.entity.view.JiangxuejinxinxiView" >
+            resultType="com.entity.view.JiangxuejinxinxiView">
 
-		SELECT  jiangxuejinxinxi.* FROM jiangxuejinxinxi  jiangxuejinxinxi 	        
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectView"
-		resultType="com.entity.view.JiangxuejinxinxiView" >
-		SELECT * FROM jiangxuejinxinxi  jiangxuejinxinxi <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	
+        SELECT jiangxuejinxinxi.* FROM jiangxuejinxinxi jiangxuejinxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.entity.view.JiangxuejinxinxiView">
+        SELECT * FROM jiangxuejinxinxi jiangxuejinxinxi
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
 </mapper>

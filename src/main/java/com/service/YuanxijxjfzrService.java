@@ -18,16 +18,16 @@ import java.util.Map;
 public interface YuanxijxjfzrService extends IService<YuanxijxjfzrEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
-    
-   	List<YuanxijxjfzrVO> selectListVO(Wrapper<YuanxijxjfzrEntity> wrapper);
-   	
-   	YuanxijxjfzrVO selectVO(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
-   	
-   	List<YuanxijxjfzrView> selectListView(Wrapper<YuanxijxjfzrEntity> wrapper);
-   	
-   	YuanxijxjfzrView selectView(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
-   	
-   	PageUtils queryPage(Map<String, Object> params,Wrapper<YuanxijxjfzrEntity> wrapper);
-   	
+
+    List<YuanxijxjfzrVO> selectListVO(Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    YuanxijxjfzrVO selectVO(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    List<YuanxijxjfzrView> selectListView(Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    YuanxijxjfzrView selectView(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    PageUtils queryPage(Map<String, Object> params, Wrapper<YuanxijxjfzrEntity> wrapper);
+
 }
 

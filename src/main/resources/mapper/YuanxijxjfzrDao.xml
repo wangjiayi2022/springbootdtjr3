@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dao.YuanxijxjfzrDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.YuanxijxjfzrEntity" id="yuanxijxjfzrMap">
         <result property="yuanxijxjfzrgonghao" column="yuanxijxjfzrgonghao"/>
         <result property="yuanxijxjfzrxingming" column="yuanxijxjfzrxingming"/>
@@ -13,29 +13,30 @@
         <result property="jiaoshiyouxiang" column="jiaoshiyouxiang"/>
     </resultMap>
 
-	<select id="selectListVO"
-		resultType="com.entity.vo.YuanxijxjfzrVO" >
-		SELECT * FROM yuanxijxjfzr  yuanxijxjfzr         
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectVO"
-		resultType="com.entity.vo.YuanxijxjfzrVO" >
-		SELECT  yuanxijxjfzr.* FROM yuanxijxjfzr  yuanxijxjfzr
- 		<where> 1=1 ${ew.sqlSegment}</where>
-	</select>
+    <select id="selectListVO"
+            resultType="com.entity.vo.YuanxijxjfzrVO">
+        SELECT * FROM yuanxijxjfzr yuanxijxjfzr
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectVO"
+            resultType="com.entity.vo.YuanxijxjfzrVO">
+        SELECT yuanxijxjfzr.* FROM yuanxijxjfzr yuanxijxjfzr
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
 
     <select id="selectListView"
-		resultType="com.entity.view.YuanxijxjfzrView" >
+            resultType="com.entity.view.YuanxijxjfzrView">
 
-		SELECT  yuanxijxjfzr.* FROM yuanxijxjfzr  yuanxijxjfzr 	        
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectView"
-		resultType="com.entity.view.YuanxijxjfzrView" >
-		SELECT * FROM yuanxijxjfzr  yuanxijxjfzr <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	
+        SELECT yuanxijxjfzr.* FROM yuanxijxjfzr yuanxijxjfzr
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.entity.view.YuanxijxjfzrView">
+        SELECT * FROM yuanxijxjfzr yuanxijxjfzr
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
 </mapper>

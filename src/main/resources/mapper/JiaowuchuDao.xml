@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dao.JiaowuchuDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.JiaowuchuEntity" id="jiaowuchuMap">
         <result property="jiaowuchugonghao" column="jiaowuchugonghao"/>
         <result property="mima" column="mima"/>
@@ -13,29 +13,30 @@
         <result property="jiaoshiyouxiang" column="jiaoshiyouxiang"/>
     </resultMap>
 
-	<select id="selectListVO"
-		resultType="com.entity.vo.JiaowuchuVO" >
-		SELECT * FROM jiaowuchu  jiaowuchu         
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectVO"
-		resultType="com.entity.vo.JiaowuchuVO" >
-		SELECT  jiaowuchu.* FROM jiaowuchu  jiaowuchu
- 		<where> 1=1 ${ew.sqlSegment}</where>
-	</select>
+    <select id="selectListVO"
+            resultType="com.entity.vo.JiaowuchuVO">
+        SELECT * FROM jiaowuchu jiaowuchu
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectVO"
+            resultType="com.entity.vo.JiaowuchuVO">
+        SELECT jiaowuchu.* FROM jiaowuchu jiaowuchu
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
 
     <select id="selectListView"
-		resultType="com.entity.view.JiaowuchuView" >
+            resultType="com.entity.view.JiaowuchuView">
 
-		SELECT  jiaowuchu.* FROM jiaowuchu  jiaowuchu 	        
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectView"
-		resultType="com.entity.view.JiaowuchuView" >
-		SELECT * FROM jiaowuchu  jiaowuchu <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	
+        SELECT jiaowuchu.* FROM jiaowuchu jiaowuchu
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.entity.view.JiaowuchuView">
+        SELECT * FROM jiaowuchu jiaowuchu
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
 </mapper>

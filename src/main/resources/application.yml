@@ -1,24 +1,24 @@
 # Tomcat
 server:
-    tomcat:
-        uri-encoding: UTF-8
-    port: 8080
-    servlet:
-        context-path: /springbootdtjr3
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8080
+  servlet:
+    context-path: /springbootdtjr3
 
 spring:
-    datasource:
-        driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/ssmdb?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-        username: root
-        password: root
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ssmdb?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: root
 
-    servlet:
-      multipart:
-        max-file-size: 10MB
-        max-request-size: 10MB
-    resources:
-      static-locations: classpath:static/,file:static/
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  resources:
+    static-locations: classpath:static/,file:static/
 
 #mybatis
 mybatis-plus:

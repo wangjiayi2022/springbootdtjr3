@@ -22,12 +22,12 @@ import com.utils.Query;
  */
 @Service("configService")
 public class ConfigServiceImpl extends ServiceImpl<ConfigDao, ConfigEntity> implements ConfigService {
-	@Override
-	public PageUtils queryPage(Map<String, Object> params) {
-		Page<ConfigEntity> page = this.selectPage(
+    @Override
+    public PageUtils queryPage(Map<String, Object> params) {
+        Page<ConfigEntity> page = this.selectPage(
                 new Query<ConfigEntity>(params).getPage(),
                 new EntityWrapper<ConfigEntity>()
         );
         return new PageUtils(page);
-	}
+    }
 }

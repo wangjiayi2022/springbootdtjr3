@@ -24,26 +24,26 @@ import com.utils.Query;
 @Service("userService")
 public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements UserService {
 
-	@Override
-	public PageUtils queryPage(Map<String, Object> params) {
-		Page<UserEntity> page = this.selectPage(
+    @Override
+    public PageUtils queryPage(Map<String, Object> params) {
+        Page<UserEntity> page = this.selectPage(
                 new Query<UserEntity>(params).getPage(),
                 new EntityWrapper<UserEntity>()
         );
         return new PageUtils(page);
-	}
+    }
 
-	@Override
-	public List<UserEntity> selectListView(Wrapper<UserEntity> wrapper) {
-		return baseMapper.selectListView(wrapper);
-	}
+    @Override
+    public List<UserEntity> selectListView(Wrapper<UserEntity> wrapper) {
+        return baseMapper.selectListView(wrapper);
+    }
 
-	@Override
-	public PageUtils queryPage(Map<String, Object> params,
-			Wrapper<UserEntity> wrapper) {
-		 Page<UserEntity> page =new Query<UserEntity>(params).getPage();
-	        page.setRecords(baseMapper.selectListView(page,wrapper));
-	    	PageUtils pageUtil = new PageUtils(page);
-	    	return pageUtil;
-	}
+    @Override
+    public PageUtils queryPage(Map<String, Object> params,
+                               Wrapper<UserEntity> wrapper) {
+        Page<UserEntity> page = new Query<UserEntity>(params).getPage();
+        page.setRecords(baseMapper.selectListView(page, wrapper));
+        PageUtils pageUtil = new PageUtils(page);
+        return pageUtil;
+    }
 }

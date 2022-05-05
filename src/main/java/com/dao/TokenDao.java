@@ -14,10 +14,10 @@ import com.entity.TokenEntity;
  * token
  */
 public interface TokenDao extends BaseMapper<TokenEntity> {
-	
-	List<TokenEntity> selectListView(@Param("ew") Wrapper<TokenEntity> wrapper);
+
+    List<TokenEntity> selectListView(@Param("ew") Wrapper<TokenEntity> wrapper);
 
 
-	List<TokenEntity> selectListView(Pagination page,@Param("ew") Wrapper<TokenEntity> wrapper);
-	
+    List<TokenEntity> selectListView(Pagination page, @Param("ew") Wrapper<TokenEntity> wrapper);
+
 }

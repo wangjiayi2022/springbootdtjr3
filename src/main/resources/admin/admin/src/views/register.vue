@@ -506,7 +506,7 @@ body {
         border-style: solid;
         border-color: rgba(64, 158, 255, 1);
         border-radius: 20px;
-        background-color: rgba(10,50, 255, 0.5);
+        background-color: rgba(10, 50, 255, 0.5);
       }
     }
   }

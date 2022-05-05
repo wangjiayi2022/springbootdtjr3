@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dao.JiangxuejinshenqingDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.JiangxuejinshenqingEntity" id="jiangxuejinshenqingMap">
         <result property="jiangxuejinmingcheng" column="jiangxuejinmingcheng"/>
         <result property="jiangxuejinleixing" column="jiangxuejinleixing"/>
@@ -23,29 +23,30 @@
         <result property="shhf" column="shhf"/>
     </resultMap>
 
-	<select id="selectListVO"
-		resultType="com.entity.vo.JiangxuejinshenqingVO" >
-		SELECT * FROM jiangxuejinshenqing  jiangxuejinshenqing         
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectVO"
-		resultType="com.entity.vo.JiangxuejinshenqingVO" >
-		SELECT  jiangxuejinshenqing.* FROM jiangxuejinshenqing  jiangxuejinshenqing
- 		<where> 1=1 ${ew.sqlSegment}</where>
-	</select>
+    <select id="selectListVO"
+            resultType="com.entity.vo.JiangxuejinshenqingVO">
+        SELECT * FROM jiangxuejinshenqing jiangxuejinshenqing
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectVO"
+            resultType="com.entity.vo.JiangxuejinshenqingVO">
+        SELECT jiangxuejinshenqing.* FROM jiangxuejinshenqing jiangxuejinshenqing
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
 
     <select id="selectListView"
-		resultType="com.entity.view.JiangxuejinshenqingView" >
+            resultType="com.entity.view.JiangxuejinshenqingView">
 
-		SELECT  jiangxuejinshenqing.* FROM jiangxuejinshenqing  jiangxuejinshenqing 	        
-        <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	<select id="selectView"
-		resultType="com.entity.view.JiangxuejinshenqingView" >
-		SELECT * FROM jiangxuejinshenqing  jiangxuejinshenqing <where> 1=1 ${ew.sqlSegment}</where>
-	</select>
-	
-	
+        SELECT jiangxuejinshenqing.* FROM jiangxuejinshenqing jiangxuejinshenqing
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.entity.view.JiangxuejinshenqingView">
+        SELECT * FROM jiangxuejinshenqing jiangxuejinshenqing
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
 </mapper>

@@ -5,7 +5,8 @@
       <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'"
            style="backgroundColor: rgba(255, 255, 255, 1)">
         <el-form class="login-form" label-position="left" :label-width="1 == 3 ? '56px' : '0px'">
-          <div class="title-container"><h3 class="title" style="color: rgba(21, 21, 20, 1);font-family:'微软雅黑'">兰州理工大学奖学金评定<br>系统登录</h3></div>
+          <div class="title-container"><h3 class="title" style="color: rgba(21, 21, 20, 1);font-family:'微软雅黑'">
+            兰州理工大学奖学金评定<br>系统登录</h3></div>
           <el-form-item :label="1 == 3 ? '用户名' : ''" :class="'style'+1">
             <span v-if="1 != 3" class="svg-container" style="color:rgba(10,50, 255, 0.5);line-height:44px"><svg-icon
                 icon-class="user"/></span>

@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import org.springframework.stereotype.Service;
+
 import java.util.Map;
 import java.util.List;
 
@@ -20,7 +21,7 @@ import com.entity.view.FudaoyuanView;
 
 @Service("fudaoyuanService")
 public class FudaoyuanServiceImpl extends ServiceImpl<FudaoyuanDao, FudaoyuanEntity> implements FudaoyuanService {
-	
+
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -30,33 +31,33 @@ public class FudaoyuanServiceImpl extends ServiceImpl<FudaoyuanDao, FudaoyuanEnt
         );
         return new PageUtils(page);
     }
-    
-    @Override
-	public PageUtils queryPage(Map<String, Object> params, Wrapper<FudaoyuanEntity> wrapper) {
-		  Page<FudaoyuanView> page =new Query<FudaoyuanView>(params).getPage();
-	        page.setRecords(baseMapper.selectListView(page,wrapper));
-	    	PageUtils pageUtil = new PageUtils(page);
-	    	return pageUtil;
- 	}
-    
-    @Override
-	public List<FudaoyuanVO> selectListVO(Wrapper<FudaoyuanEntity> wrapper) {
- 		return baseMapper.selectListVO(wrapper);
-	}
-	
-	@Override
-	public FudaoyuanVO selectVO(Wrapper<FudaoyuanEntity> wrapper) {
- 		return baseMapper.selectVO(wrapper);
-	}
-	
-	@Override
-	public List<FudaoyuanView> selectListView(Wrapper<FudaoyuanEntity> wrapper) {
-		return baseMapper.selectListView(wrapper);
-	}
 
-	@Override
-	public FudaoyuanView selectView(Wrapper<FudaoyuanEntity> wrapper) {
-		return baseMapper.selectView(wrapper);
-	}
+    @Override
+    public PageUtils queryPage(Map<String, Object> params, Wrapper<FudaoyuanEntity> wrapper) {
+        Page<FudaoyuanView> page = new Query<FudaoyuanView>(params).getPage();
+        page.setRecords(baseMapper.selectListView(page, wrapper));
+        PageUtils pageUtil = new PageUtils(page);
+        return pageUtil;
+    }
+
+    @Override
+    public List<FudaoyuanVO> selectListVO(Wrapper<FudaoyuanEntity> wrapper) {
+        return baseMapper.selectListVO(wrapper);
+    }
+
+    @Override
+    public FudaoyuanVO selectVO(Wrapper<FudaoyuanEntity> wrapper) {
+        return baseMapper.selectVO(wrapper);
+    }
+
+    @Override
+    public List<FudaoyuanView> selectListView(Wrapper<FudaoyuanEntity> wrapper) {
+        return baseMapper.selectListView(wrapper);
+    }
+
+    @Override
+    public FudaoyuanView selectView(Wrapper<FudaoyuanEntity> wrapper) {
+        return baseMapper.selectView(wrapper);
+    }
 
 }

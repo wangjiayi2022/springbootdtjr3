@@ -15,15 +15,15 @@ import java.util.List;
  * 辅导员
  */
 public interface YuanxijxjfzrDao extends BaseMapper<YuanxijxjfzrEntity> {
-	
-	List<YuanxijxjfzrVO> selectListVO(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
-	
-	YuanxijxjfzrVO selectVO(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
-	
-	List<YuanxijxjfzrView> selectListView(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
 
-	List<YuanxijxjfzrView> selectListView(Pagination page,@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
-	
-	YuanxijxjfzrView selectView(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
-	
+    List<YuanxijxjfzrVO> selectListVO(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    YuanxijxjfzrVO selectVO(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    List<YuanxijxjfzrView> selectListView(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    List<YuanxijxjfzrView> selectListView(Pagination page, @Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
+    YuanxijxjfzrView selectView(@Param("ew") Wrapper<YuanxijxjfzrEntity> wrapper);
+
 }

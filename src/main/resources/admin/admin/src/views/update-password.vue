@@ -1,11 +1,11 @@
 <template>
   <div>
     <el-form
-      class="detail-form-content"
-      ref="ruleForm"
-      :rules="rules"
-      :model="ruleForm"
-      label-width="80px"
+        class="detail-form-content"
+        ref="ruleForm"
+        :rules="rules"
+        :model="ruleForm"
+        label-width="80px"
     >
       <el-form-item label="原密码" prop="password">
         <el-input v-model="ruleForm.password"></el-input>
@@ -58,7 +58,7 @@ export default {
     this.$http({
       url: `${this.$storage.get("sessionTable")}/session`,
       method: "get"
-    }).then(({ data }) => {
+    }).then(({data}) => {
       if (data && data.code === 0) {
         this.user = data.data;
       } else {
@@ -69,7 +69,7 @@ export default {
   methods: {
     onLogout() {
       this.$storage.remove("Token");
-      this.$router.replace({ name: "login" });
+      this.$router.replace({name: "login"});
     },
     // 修改密码
     onUpdateHandler() {
@@ -95,7 +95,7 @@ export default {
             url: `${this.$storage.get("sessionTable")}/update`,
             method: "post",
             data: this.user
-          }).then(({ data }) => {
+          }).then(({data}) => {
             if (data && data.code === 0) {
               this.$message({
                 message: "修改密码成功,下次登录系统生效",
