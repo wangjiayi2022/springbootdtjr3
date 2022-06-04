@@ -17,7 +17,7 @@ public class XuexiaojxjfzrModel implements Serializable {
      * 辅导员姓名
      */
 
-    private String yuanxijxjfzrxingming;
+    private String xuexiaojxjfzrxingming;
 
     /**
      * 密码
@@ -48,15 +48,15 @@ public class XuexiaojxjfzrModel implements Serializable {
      * 设置：辅导员姓名
      */
 
-    public void setYuanxijxjfzrxingming(String yuanxijxjfzrxingming) {
-        this.yuanxijxjfzrxingming = yuanxijxjfzrxingming;
+    public void setXuexiaojxjfzrxingming(String xuexiaojxjfzrxingming) {
+        this.xuexiaojxjfzrxingming = xuexiaojxjfzrxingming;
     }
 
     /**
      * 获取：辅导员姓名
      */
-    public String getYuanxijxjfzrxingming() {
-        return yuanxijxjfzrxingming;
+    public String getXuexiaojxjfzrxingming() {
+        return xuexiaojxjfzrxingming;
     }
 
 

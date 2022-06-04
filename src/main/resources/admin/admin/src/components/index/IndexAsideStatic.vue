@@ -2,17 +2,18 @@
   <el-aside class="index-aside" height="100vh" width="210px">
     <div class="index-aside-inner menulist" style="height:100%">
       <div v-for="item in menuList" :key="item.roleName" v-if="role==item.roleName" class="menulist-item"
-           style="height:100%;broder:0;background-color:rgba(173,10,255,0.35)">
-        <div class="menulistImg" style="backgroundColor:#ff0000;padding:25px 0"
+           style="height:100%;broder:0;background-color:rgba(255,255,255,0)">
+        <div class="menulistImg" style="backgroundColor:rgba(5,1,10,0.35);padding:25px 0"
              v-if="false && menulistStyle == 'vertical'">
           <el-image v-if="'http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg'"
                     src="http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg" fit="cover"/>
         </div>
-        <el-menu mode="vertical" :unique-opened="true" class="el-menu-demo" style="height:100%;"
-                 background-color="rgba(173,10,255,0.35)" text-color="#ffffff" active-text-color="#72F181"
+        <el-menu mode="vertical" :unique-opened="true" class="el-menu-demo" style="height:300%;"
+                 background-color="rgba(5,1,10,0.35)" text-color="#ffffff" active-text-color="#72F181"
                  default-active="0">
-          <el-menu-item index="0" :style="menulistBorderBottom" @click="menuHandler('')"><i v-if="true"
-                                                                                            class="el-icon-s-home"/>首页
+          <el-menu-item index="0" :style="menulistBorderBottom" @click="menuHandler('')">
+            <i v-if="true"
+               class="el-icon-s-home"/>首页
           </el-menu-item>
           <el-submenu :index="1+''" :style="menulistBorderBottom">
             <template slot="title">
@@ -111,7 +112,7 @@ export default {
       let style = 'vertical'
       let w = '1px'
       let s = 'solid'
-      let c = '#ccc'
+      let c = 'rgba(5,1,10,0.35)'
       if (style == 'vertical') {
         this.menulistBorderBottom = {
           borderBottomWidth: w,
@@ -138,25 +139,25 @@ export default {
         document.querySelectorAll('.menulist .el-menu-item').forEach(el => {
           el.addEventListener("mouseenter", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(219, 219, 228, 0.59)"
+            el.style.backgroundColor = "rgba(5,1,10,0.35)"
           })
           el.addEventListener("mouseleave", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(173,10,255,0.35)"
+            el.style.backgroundColor = "rgba(5,1,10,0.35)"
           })
           el.addEventListener("focus", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(219, 219, 228, 0.59)"
+            el.style.backgroundColor = "rgba(5,1,10,0.35)"
           })
         })
         document.querySelectorAll('.menulist .el-submenu__title').forEach(el => {
           el.addEventListener("mouseenter", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(219, 219, 228, 0.59)"
+            el.style.backgroundColor = "rgba(5,1,10,0.35)"
           })
           el.addEventListener("mouseleave", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(173,10,255,0.35)"
+            el.style.backgroundColor = "rgba(5,1,10,0.35)"
           })
         })
       })
@@ -164,7 +165,7 @@ export default {
     setMenulistIconColor() {
       this.$nextTick(() => {
         document.querySelectorAll('.menulist .el-submenu__title .el-submenu__icon-arrow').forEach(el => {
-          el.style.color = "rgba(153, 153, 153, 1)"
+          el.style.color = "rgba(5,1,10,0.35)"
         })
       })
     },

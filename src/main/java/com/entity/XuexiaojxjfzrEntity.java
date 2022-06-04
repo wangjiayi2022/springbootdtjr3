@@ -15,7 +15,7 @@ import java.util.Date;
  * 院系奖学金负责人
  * 数据库通用操作实体类（普通增删改查）
  */
-@TableName("yuanxijxjfzr")
+@TableName("xuexiaojxjfzr")
 public class XuexiaojxjfzrEntity<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -41,13 +41,13 @@ public class XuexiaojxjfzrEntity<T> implements Serializable {
      * 辅导员工号
      */
 
-    private String yuanxijxjfzrgonghao;
+    private String xuexiaojxjfzrgonghao;
 
     /**
      * 辅导员姓名
      */
 
-    private String yuanxijxjfzrxingming;
+    private String xuexiaojxjfzrxingming;
 
     /**
      * 密码
@@ -97,29 +97,29 @@ public class XuexiaojxjfzrEntity<T> implements Serializable {
     /**
      * 设置：辅导员工号
      */
-    public void setYuanxijxjfzrgonghao(String yuanxijxjfzrgonghao) {
-        this.yuanxijxjfzrgonghao = yuanxijxjfzrgonghao;
+    public void setXuexiaojxjfzrgonghao(String xuexiaojxjfzrgonghao) {
+        this.xuexiaojxjfzrgonghao = xuexiaojxjfzrgonghao;
     }
 
     /**
      * 获取：辅导员工号
      */
-    public String getYuanxijxjfzrgonghao() {
-        return yuanxijxjfzrgonghao;
+    public String getXuexiaojxjfzrgonghao() {
+        return xuexiaojxjfzrgonghao;
     }
 
     /**
      * 设置：辅导员姓名
      */
-    public void setYuanxijxjfzrxingming(String yuanxijxjfzrxingming) {
-        this.yuanxijxjfzrxingming = yuanxijxjfzrxingming;
+    public void setXuexiaojxjfzrxingming(String xuexiaojxjfzrxingming) {
+        this.xuexiaojxjfzrxingming = xuexiaojxjfzrxingming;
     }
 
     /**
      * 获取：辅导员姓名
      */
-    public String getYuanxijxjfzrxingming() {
-        return yuanxijxjfzrxingming;
+    public String getXuexiaojxjfzrxingming() {
+        return xuexiaojxjfzrxingming;
     }
 
     /**

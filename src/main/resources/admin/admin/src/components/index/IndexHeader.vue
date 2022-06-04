@@ -52,7 +52,7 @@ export default {
         "headHeight": "60px",
         "headTitleImgBorderRadius": "22px",
         "headTitleImgUrl": "http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg",
-        "headBgColor": "#F4EEEE",
+        "headBgColor": "rgba(242, 229, 229, 0.88)",
         "headTitleImgBoxShadow": "0 1px 6px #444",
         "headLogoutFontColor": "#333",
         "headUserInfoFontSize": "16px",

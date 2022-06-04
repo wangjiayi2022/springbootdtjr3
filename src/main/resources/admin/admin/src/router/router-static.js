@@ -19,7 +19,9 @@ import jiangxuejinxinxi from '@/views/modules/jiangxuejinxinxi/list'
 import jiangxuejinshenqing from '@/views/modules/jiangxuejinshenqing/list'
 import fudaoyuan from '@/views/modules/fudaoyuan/list'
 import yuanxijxjfzr from '@/views/modules/yuanxijxjfzr/list'
+import xuexiaojxjfzr from '@/views/modules/xuexiaojxjfzr/list'
 import xueshengchengji from '@/views/modules/xueshengchengji/list'
+import xueshenglunwen from '@/views/modules/xueshenglunwen/list'
 import gonggaoxinxi from '@/views/modules/gonggaoxinxi/list'
 import jiaowuchu from '@/views/modules/jiaowuchu/list'
 
@@ -87,9 +89,19 @@ const routes = [{
             component: yuanxijxjfzr
         }
         , {
+            path: '/xuexiaojxjfzr',
+            name: '学校奖学金负责人',
+            component: xuexiaojxjfzr
+        }
+        , {
             path: '/xueshengchengji',
             name: '学生成绩',
             component: xueshengchengji
+        }
+        , {
+            path: '/xueshenglunwen',
+            name: '学生论文',
+            component: xueshenglunwen
         }
         , {
             path: '/gonggaoxinxi',

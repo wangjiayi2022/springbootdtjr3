@@ -10,25 +10,25 @@
     >
       <el-row>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="辅导员工号" prop="fudaoyuangonghao">
-            <el-input v-model="ruleForm.fudaoyuangonghao"
-                      placeholder="辅导员工号" clearable :readonly="ro.fudaoyuangonghao"></el-input>
+          <el-form-item class="input" v-if="type!='info'" label="辅导员工号" prop="instructorId">
+            <el-input v-model="ruleForm.instructorId"
+                      placeholder="辅导员工号" clearable :readonly="ro.instructorId"></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" label="辅导员工号" prop="fudaoyuangonghao">
-              <el-input v-model="ruleForm.fudaoyuangonghao"
+            <el-form-item class="input" label="辅导员工号" prop="instructorId">
+              <el-input v-model="ruleForm.instructorId"
                         placeholder="辅导员工号" readonly></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="辅导员姓名" prop="fudaoyuanxingming">
-            <el-input v-model="ruleForm.fudaoyuanxingming"
-                      placeholder="辅导员姓名" clearable :readonly="ro.fudaoyuanxingming"></el-input>
+          <el-form-item class="input" v-if="type!='info'" label="辅导员姓名" prop="instructor_name">
+            <el-input v-model="ruleForm.instructor_name"
+                      placeholder="辅导员姓名" clearable :readonly="ro.instructor_name"></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" label="辅导员姓名" prop="fudaoyuanxingming">
-              <el-input v-model="ruleForm.fudaoyuanxingming"
+            <el-form-item class="input" label="辅导员姓名" prop="instructor_name">
+              <el-input v-model="ruleForm.instructor_name"
                         placeholder="辅导员姓名" readonly></el-input>
             </el-form-item>
           </div>
@@ -247,16 +247,16 @@ export default {
       id: '',
       type: '',
       ro: {
-        fudaoyuangonghao: false,
-        fudaoyuanxingming: false,
+        instructorId: false,
+        instructor_name: false,
         mima: false,
         xingbie: false,
         lianxidianhua: false,
         jiaoshiyouxiang: false,
       },
       ruleForm: {
-        fudaoyuangonghao: '',
-        fudaoyuanxingming: '',
+        instructorId: '',
+        instructor_name: '',
         mima: '',
         xingbie: '',
         lianxidianhua: '',
@@ -264,10 +264,10 @@ export default {
       },
       xingbieOptions: [],
       rules: {
-        fudaoyuangonghao: [
+        instructorId: [
           {required: true, message: '辅导员工号不能为空', trigger: 'blur'},
         ],
-        fudaoyuanxingming: [
+        instructor_name: [
           {required: true, message: '辅导员姓名不能为空', trigger: 'blur'},
         ],
         mima: [
@@ -305,14 +305,14 @@ export default {
       } else if (this.type == 'cross') {
         var obj = this.$storage.getObj('crossObj');
         for (var o in obj) {
-          if (o == 'fudaoyuangonghao') {
-            this.ruleForm.fudaoyuangonghao = obj[o];
-            this.ro.fudaoyuangonghao = true;
+          if (o == 'instructorId') {
+            this.ruleForm.instructorId = obj[o];
+            this.ro.instructorId = true;
             continue;
           }
-          if (o == 'fudaoyuanxingming') {
-            this.ruleForm.fudaoyuanxingming = obj[o];
-            this.ro.fudaoyuanxingming = true;
+          if (o == 'instructor_name') {
+            this.ruleForm.instructor_name = obj[o];
+            this.ro.instructor_name = true;
             continue;
           }
           if (o == 'mima') {

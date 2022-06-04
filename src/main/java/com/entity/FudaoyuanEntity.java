@@ -58,13 +58,13 @@ public class FudaoyuanEntity<T> implements Serializable {
      * 辅导员工号
      */
 
-    private String fudaoyuangonghao;
+    private String instructorId;
 
     /**
      * 辅导员姓名
      */
 
-    private String fudaoyuanxingming;
+    private String instructor_name;
 
     /**
      * 密码
@@ -114,29 +114,29 @@ public class FudaoyuanEntity<T> implements Serializable {
     /**
      * 设置：辅导员工号
      */
-    public void setFudaoyuangonghao(String fudaoyuangonghao) {
-        this.fudaoyuangonghao = fudaoyuangonghao;
+    public void setInstructorId(String instructorId) {
+        this.instructorId = instructorId;
     }
 
     /**
      * 获取：辅导员工号
      */
-    public String getFudaoyuangonghao() {
-        return fudaoyuangonghao;
+    public String getInstructorId() {
+        return instructorId;
     }
 
     /**
      * 设置：辅导员姓名
      */
-    public void setFudaoyuanxingming(String fudaoyuanxingming) {
-        this.fudaoyuanxingming = fudaoyuanxingming;
+    public void setFudaoyuanxingming(String instructor_name) {
+        this.instructor_name = instructor_name;
     }
 
     /**
      * 获取：辅导员姓名
      */
     public String getFudaoyuanxingming() {
-        return fudaoyuanxingming;
+        return instructor_name;
     }
 
     /**

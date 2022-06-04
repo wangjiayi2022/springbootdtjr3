@@ -26,7 +26,7 @@ public class FudaoyuanModel implements Serializable {
      * 辅导员姓名
      */
 
-    private String fudaoyuanxingming;
+    private String instructor_name;
 
     /**
      * 密码
@@ -57,15 +57,15 @@ public class FudaoyuanModel implements Serializable {
      * 设置：辅导员姓名
      */
 
-    public void setFudaoyuanxingming(String fudaoyuanxingming) {
-        this.fudaoyuanxingming = fudaoyuanxingming;
+    public void setFudaoyuanxingming(String instructor_name) {
+        this.instructor_name = instructor_name;
     }
 
     /**
      * 获取：辅导员姓名
      */
     public String getFudaoyuanxingming() {
-        return fudaoyuanxingming;
+        return instructor_name;
     }
 
 

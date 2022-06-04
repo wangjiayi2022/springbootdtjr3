@@ -4,11 +4,11 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.dao.YuanxijxjfzrDao;
-import com.entity.YuanxijxjfzrEntity;
-import com.entity.view.YuanxijxjfzrView;
-import com.entity.vo.YuanxijxjfzrVO;
-import com.service.YuanxijxjfzrService;
+import com.dao.XuexiaojxjfzrDao;
+import com.entity.XuexiaojxjfzrEntity;
+import com.entity.view.XuexiaojxjfzrView;
+import com.entity.vo.XuexiaojxjfzrVO;
+import com.service.XuexiaojxjfzrService;
 import com.utils.PageUtils;
 import com.utils.Query;
 import org.springframework.stereotype.Service;
@@ -16,44 +16,44 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-@Service("yuanxijxjfzrService")
-public class XuexiaojxjfzrServiceImpl extends ServiceImpl<YuanxijxjfzrDao, YuanxijxjfzrEntity> implements YuanxijxjfzrService {
+@Service("xuexiaojxjfzrService")
+public class XuexiaojxjfzrServiceImpl extends ServiceImpl<XuexiaojxjfzrDao, XuexiaojxjfzrEntity> implements XuexiaojxjfzrService {
 
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        Page<YuanxijxjfzrEntity> page = this.selectPage(
-                new Query<YuanxijxjfzrEntity>(params).getPage(),
-                new EntityWrapper<YuanxijxjfzrEntity>()
+        Page<XuexiaojxjfzrEntity> page = this.selectPage(
+                new Query<XuexiaojxjfzrEntity>(params).getPage(),
+                new EntityWrapper<XuexiaojxjfzrEntity>()
         );
         return new PageUtils(page);
     }
 
     @Override
-    public PageUtils queryPage(Map<String, Object> params, Wrapper<YuanxijxjfzrEntity> wrapper) {
-        Page<YuanxijxjfzrView> page = new Query<YuanxijxjfzrView>(params).getPage();
+    public PageUtils queryPage(Map<String, Object> params, Wrapper<XuexiaojxjfzrEntity> wrapper) {
+        Page<XuexiaojxjfzrView> page = new Query<XuexiaojxjfzrView>(params).getPage();
         page.setRecords(baseMapper.selectListView(page, wrapper));
         PageUtils pageUtil = new PageUtils(page);
         return pageUtil;
     }
 
     @Override
-    public List<YuanxijxjfzrVO> selectListVO(Wrapper<YuanxijxjfzrEntity> wrapper) {
+    public List<XuexiaojxjfzrVO> selectListVO(Wrapper<XuexiaojxjfzrEntity> wrapper) {
         return baseMapper.selectListVO(wrapper);
     }
 
     @Override
-    public YuanxijxjfzrVO selectVO(Wrapper<YuanxijxjfzrEntity> wrapper) {
+    public XuexiaojxjfzrVO selectVO(Wrapper<XuexiaojxjfzrEntity> wrapper) {
         return baseMapper.selectVO(wrapper);
     }
 
     @Override
-    public List<YuanxijxjfzrView> selectListView(Wrapper<YuanxijxjfzrEntity> wrapper) {
+    public List<XuexiaojxjfzrView> selectListView(Wrapper<XuexiaojxjfzrEntity> wrapper) {
         return baseMapper.selectListView(wrapper);
     }
 
     @Override
-    public YuanxijxjfzrView selectView(Wrapper<YuanxijxjfzrEntity> wrapper) {
+    public XuexiaojxjfzrView selectView(Wrapper<XuexiaojxjfzrEntity> wrapper) {
         return baseMapper.selectView(wrapper);
     }
 

@@ -52,14 +52,26 @@
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="学生综合成绩" prop="xueshengchengji">
-            <el-input v-model="ruleForm.xueshengchengji"
-                      placeholder="学生综合成绩" clearable :readonly="ro.xueshengchengji"></el-input>
+          <el-form-item class="input" v-if="type!='info'" label="论文名称" prop="lunwenmingcheng">
+            <el-input v-model="ruleForm.lunwenmingcheng"
+                      placeholder="论文名称" clearable :readonly="ro.lunwenmingcheng"></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" label="学生综合成绩" prop="xueshengchengji">
-              <el-input v-model="ruleForm.xueshengchengji"
-                        placeholder="学生综合成绩" readonly></el-input>
+            <el-form-item class="input" label="论文名称" prop="lunwenmingcheng">
+              <el-input v-model="ruleForm.lunwenmingcheng"
+                        placeholder="论文名称" readonly></el-input>
+            </el-form-item>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item class="input" v-if="type!='info'" label="论文种类" prop="lunwenzhonglei">
+            <el-input v-model="ruleForm.lunwenzhonglei"
+                      placeholder="论文种类" clearable :readonly="ro.lunwenzhonglei"></el-input>
+          </el-form-item>
+          <div v-else>
+            <el-form-item class="input" label="论文种类" prop="lunwenzhonglei">
+              <el-input v-model="ruleForm.lunwenzhonglei"
+                        placeholder="论文种类" readonly></el-input>
             </el-form-item>
           </div>
         </el-col>
@@ -260,7 +272,7 @@ export default {
         biaoti: false,
         xueshengzhanghao: false,
         xueshengxingming: false,
-        xueshengchengji: false,
+        xueshenglunwen: false,
         pingyu: false,
         dengjishijian: false,
       },
@@ -268,7 +280,7 @@ export default {
         biaoti: '',
         xueshengzhanghao: '',
         xueshengxingming: '',
-        xueshengchengji: '',
+        xueshenglunwen: '',
         pingyu: '',
         dengjishijian: '',
       },
@@ -277,7 +289,7 @@ export default {
         biaoti: [],
         xueshengzhanghao: [],
         xueshengxingming: [],
-        xueshengchengji: [],
+        xueshenglunwen: [],
         pingyu: [],
         dengjishijian: [],
       }
@@ -320,9 +332,9 @@ export default {
             this.ro.xueshengxingming = true;
             continue;
           }
-          if (o == 'xueshengchengji') {
-            this.ruleForm.xueshengchengji = obj[o];
-            this.ro.xueshengchengji = true;
+          if (o == 'xueshenglunwen') {
+            this.ruleForm.xueshenglunwen = obj[o];
+            this.ro.xueshenglunwen = true;
             continue;
           }
           if (o == 'pingyu') {
@@ -377,7 +389,7 @@ export default {
     // 多级联动参数
     info(id) {
       this.$http({
-        url: `xueshengchengji/info/${id}`,
+        url: `xueshenglunwen/info/${id}`,
         method: "get"
       }).then(({data}) => {
         if (data && data.code === 0) {
@@ -398,7 +410,7 @@ export default {
       this.$refs["ruleForm"].validate(valid => {
         if (valid) {
           this.$http({
-            url: `xueshengchengji/${!this.ruleForm.id ? "save" : "update"}`,
+            url: `xueshenglunwen/${!this.ruleForm.id ? "save" : "update"}`,
             method: "post",
             data: this.ruleForm
           }).then(({data}) => {
@@ -410,7 +422,7 @@ export default {
                 onClose: () => {
                   this.parent.showFlag = true;
                   this.parent.addOrUpdateFlag = false;
-                  this.parent.xueshengchengjiCrossAddOrUpdateFlag = false;
+                  this.parent.xueshenglunwenCrossAddOrUpdateFlag = false;
                   this.parent.search();
                   this.parent.contentStyleChange();
                 }
@@ -430,7 +442,7 @@ export default {
     back() {
       this.parent.showFlag = true;
       this.parent.addOrUpdateFlag = false;
-      this.parent.xueshengchengjiCrossAddOrUpdateFlag = false;
+      this.parent.xueshenglunwenCrossAddOrUpdateFlag = false;
       this.parent.contentStyleChange();
     },
     addEditStyleChange() {

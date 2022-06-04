@@ -96,6 +96,73 @@
             <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
           </el-form-item>
         </el-col>
+<!--    院系奖学金负责人    -->
+        <el-col :span="12">
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="工号" prop="yuanxijxjfzrgonghao">
+            <el-input v-model="ruleForm.yuanxijxjfzrgonghao" readonly placeholder="院系奖学金负责人工号" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="姓名" prop="yuanxijxjfzrxingming">
+            <el-input v-model="ruleForm.yuanxijxjfzrxingming" placeholder="院系奖学金负责人姓名" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="性别" prop="xingbie">
+            <el-select v-model="ruleForm.xingbie" placeholder="请选择性别">
+              <el-option
+                  v-for="(item,index) in fudaoyuanxingbieOptions"
+                  v-bind:key="index"
+                  :label="item"
+                  :value="item">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="联系电话" prop="lianxidianhua">
+            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="教师邮箱" prop="jiaoshiyouxiang">
+            <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <!--    学校奖学金负责人    -->
+        <el-col :span="12">
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="工号" prop="xuexiaojxjfzrgonghao">
+            <el-input v-model="ruleForm.xuexiaojxjfzrgonghao" readonly placeholder="学校奖学金负责人工号" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="姓名" prop="xuexiaojxjfzrxingming">
+            <el-input v-model="ruleForm.xuexiaojxjfzrxingming" placeholder="学校奖学金负责人姓名" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="性别" prop="xingbie">
+            <el-select v-model="ruleForm.xingbie" placeholder="请选择性别">
+              <el-option
+                  v-for="(item,index) in fudaoyuanxingbieOptions"
+                  v-bind:key="index"
+                  :label="item"
+                  :value="item">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="联系电话" prop="lianxidianhua">
+            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="教师邮箱" prop="jiaoshiyouxiang">
+            <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
+          </el-form-item>
+        </el-col>
+        <!--        -->
         <el-col :span="12">
           <el-form-item v-if="flag=='jiaowuchu'" label="教务处工号" prop="jiaowuchugonghao">
             <el-input v-model="ruleForm.jiaowuchugonghao" readonly placeholder="教务处工号" clearable></el-input>

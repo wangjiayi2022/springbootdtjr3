@@ -27,14 +27,23 @@
             </div>
           </el-form-item>
           <el-form-item label="角色" prop="loginInRole" class="role">
-            <el-radio
+            <el-select v-model="rulesForm.role" placeholder="请选择角色">
+              <el-option  v-for="item in menus"
+                          v-if="item.hasBackLogin=='是'"
+                          :key="item.roleName"
+                          :label="item.roleName"
+                          :value="item.roleName">
+                {{ item.roleName }}
+              </el-option>
+            </el-select>
+<!--            <el-radio
                 v-for="item in menus"
                 v-if="item.hasBackLogin=='是'"
                 v-bind:key="item.roleName"
                 v-model="rulesForm.role"
                 :label="item.roleName"
             >{{ item.roleName }}
-            </el-radio>
+            </el-radio>-->
           </el-form-item>
           <el-button type="primary" @click="login()" class="loginInBt"
                      style="padding:0;font-size:16px;border-radius:20px;height:44px;line-height:44px;width:100%;backgroundColor:rgba(10,50, 255, 0.5); borderColor:rgba(203, 185, 86, 1); color:rgba(47, 43, 43, 1)">

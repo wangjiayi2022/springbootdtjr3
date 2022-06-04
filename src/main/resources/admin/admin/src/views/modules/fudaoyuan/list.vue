@@ -7,18 +7,18 @@
                 :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
           <el-form-item :label="contents.inputTitle == 1 ? '辅导员工号' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.fudaoyuangonghao" placeholder="辅导员工号" clearable></el-input>
+                      v-model="searchForm.instructorId" placeholder="辅导员工号" clearable></el-input>
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.fudaoyuangonghao" placeholder="辅导员工号" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fudaoyuangonghao" placeholder="辅导员工号"
+                      v-model="searchForm.instructorId" placeholder="辅导员工号" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.instructorId" placeholder="辅导员工号"
                       clearable></el-input>
           </el-form-item>
           <el-form-item :label="contents.inputTitle == 1 ? '辅导员姓名' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.fudaoyuanxingming" placeholder="辅导员姓名" clearable></el-input>
+                      v-model="searchForm.instructor_name" placeholder="辅导员姓名" clearable></el-input>
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.fudaoyuanxingming" placeholder="辅导员姓名" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.fudaoyuanxingming" placeholder="辅导员姓名"
+                      v-model="searchForm.instructor_name" placeholder="辅导员姓名" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.instructor_name" placeholder="辅导员姓名"
                       clearable></el-input>
           </el-form-item>
           <el-form-item :label="contents.inputTitle == 1 ? '联系电话' : ''">
@@ -109,19 +109,19 @@
           </el-table-column>
           <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50"/>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="fudaoyuangonghao"
+                           prop="instructorId"
                            header-align="center"
                            label="辅导员工号">
             <template slot-scope="scope">
-              {{ scope.row.fudaoyuangonghao }}
+              {{ scope.row.instructorId }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="fudaoyuanxingming"
+                           prop="instructor_name"
                            header-align="center"
                            label="辅导员姓名">
             <template slot-scope="scope">
-              {{ scope.row.fudaoyuanxingming }}
+              {{ scope.row.instructor_name }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
@@ -539,11 +539,11 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-      if (this.searchForm.fudaoyuangonghao != '' && this.searchForm.fudaoyuangonghao != undefined) {
-        params['fudaoyuangonghao'] = '%' + this.searchForm.fudaoyuangonghao + '%'
+      if (this.searchForm.instructorId != '' && this.searchForm.instructorId != undefined) {
+        params['instructorId'] = '%' + this.searchForm.instructorId + '%'
       }
-      if (this.searchForm.fudaoyuanxingming != '' && this.searchForm.fudaoyuanxingming != undefined) {
-        params['fudaoyuanxingming'] = '%' + this.searchForm.fudaoyuanxingming + '%'
+      if (this.searchForm.instructor_name != '' && this.searchForm.instructor_name != undefined) {
+        params['instructor_name'] = '%' + this.searchForm.instructor_name + '%'
       }
       if (this.searchForm.lianxidianhua != '' && this.searchForm.lianxidianhua != undefined) {
         params['lianxidianhua'] = '%' + this.searchForm.lianxidianhua + '%'

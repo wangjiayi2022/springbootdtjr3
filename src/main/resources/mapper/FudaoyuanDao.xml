@@ -5,7 +5,7 @@
 
     <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.FudaoyuanEntity" id="fudaoyuanMap">
-        <result property="fudaoyuangonghao" column="fudaoyuangonghao"/>
+        <result property="instructorId" column="instructor_id"/>
         <result property="fudaoyuanxingming" column="fudaoyuanxingming"/>
         <result property="mima" column="mima"/>
         <result property="xingbie" column="xingbie"/>

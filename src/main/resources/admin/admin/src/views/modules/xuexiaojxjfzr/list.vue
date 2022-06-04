@@ -1,31 +1,33 @@
 <template>
   <div class="main-content">
+
     <!-- 列表页 -->
     <div v-if="showFlag">
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row :gutter="20" class="slt"
                 :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
-<!--          <el-form-item :label="contents.inputTitle == 1 ? '标题' : ''">
+          <el-form-item :label="contents.inputTitle == 1 ? '学校奖学金负责人工号' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.biaoti" placeholder="标题" clearable></el-input>
+                      v-model="searchForm.xuexiaojxjfzrgonghao" placeholder="学校奖学金负责人工号" clearable></el-input>
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.biaoti" placeholder="标题" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.biaoti" placeholder="标题" clearable></el-input>
-          </el-form-item>-->
-          <el-form-item :label="contents.inputTitle == 1 ? '学生账号' : ''">
-            <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.xueshengzhanghao" placeholder="学生账号" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.xueshengzhanghao" placeholder="学生账号" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.xueshengzhanghao" placeholder="学生账号"
+                      v-model="searchForm.xuexiaojxjfzrgonghao" placeholder="学校奖学金负责人工号" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.xuexiaojxjfzrgonghao" placeholder="学校奖学金负责人工号"
                       clearable></el-input>
           </el-form-item>
-          <el-form-item :label="contents.inputTitle == 1 ? '学生姓名' : ''">
+          <el-form-item :label="contents.inputTitle == 1 ? '学校奖学金负责人姓名' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.xueshengxingming" placeholder="学生姓名" clearable></el-input>
+                      v-model="searchForm.xuexiaojxjfzrxingming" placeholder="学校奖学金负责人姓名" clearable></el-input>
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.xueshengxingming" placeholder="学生姓名" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.xueshengxingming" placeholder="学生姓名"
+                      v-model="searchForm.xuexiaojxjfzrxingming" placeholder="学校奖学金负责人姓名" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.xuexiaojxjfzrxingming" placeholder="学校奖学金负责人姓名"
+                      clearable></el-input>
+          </el-form-item>
+          <el-form-item :label="contents.inputTitle == 1 ? '联系电话' : ''">
+            <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
+                      v-model="searchForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
+                      v-model="searchForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.lianxidianhua" placeholder="联系电话"
                       clearable></el-input>
           </el-form-item>
           <el-form-item>
@@ -44,25 +46,25 @@
                 :style="{justifyContent:contents.btnAdAllBoxPosition=='1'?'flex-start':contents.btnAdAllBoxPosition=='2'?'center':'flex-end'}">
           <el-form-item>
             <el-button
-                v-if="isAuth('xueshengchengji','新增') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 1"
+                v-if="isAuth('xuexiaojxjfzr','新增') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 1"
                 type="success"
                 icon="el-icon-plus"
                 @click="addOrUpdateHandler()"
             >{{ contents.btnAdAllFont == 1 ? '新增' : '' }}
             </el-button>
             <el-button
-                v-if="isAuth('xueshengchengji','新增') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 2"
+                v-if="isAuth('xuexiaojxjfzr','新增') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 2"
                 type="success"
                 @click="addOrUpdateHandler()"
             >{{ contents.btnAdAllFont == 1 ? '新增' : '' }}<i class="el-icon-plus el-icon--right"/></el-button>
             <el-button
-                v-if="isAuth('xueshengchengji','新增') && contents.btnAdAllIcon == 0"
+                v-if="isAuth('xuexiaojxjfzr','新增') && contents.btnAdAllIcon == 0"
                 type="success"
                 @click="addOrUpdateHandler()"
             >{{ contents.btnAdAllFont == 1 ? '新增' : '' }}
             </el-button>
             <el-button
-                v-if="isAuth('xueshengchengji','删除') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 1 && contents.tableSelection"
+                v-if="isAuth('xuexiaojxjfzr','删除') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 1 && contents.tableSelection"
                 :disabled="dataListSelections.length <= 0"
                 type="danger"
                 icon="el-icon-delete"
@@ -70,13 +72,13 @@
             >{{ contents.btnAdAllFont == 1 ? '删除' : '' }}
             </el-button>
             <el-button
-                v-if="isAuth('xueshengchengji','删除') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 2 && contents.tableSelection"
+                v-if="isAuth('xuexiaojxjfzr','删除') && contents.btnAdAllIcon == 1 && contents.btnAdAllIconPosition == 2 && contents.tableSelection"
                 :disabled="dataListSelections.length <= 0"
                 type="danger"
                 @click="deleteHandler()"
             >{{ contents.btnAdAllFont == 1 ? '删除' : '' }}<i class="el-icon-delete el-icon--right"/></el-button>
             <el-button
-                v-if="isAuth('xueshengchengji','删除') && contents.btnAdAllIcon == 0 && contents.tableSelection"
+                v-if="isAuth('xuexiaojxjfzr','删除') && contents.btnAdAllIcon == 0 && contents.tableSelection"
                 :disabled="dataListSelections.length <= 0"
                 type="danger"
                 @click="deleteHandler()"
@@ -96,7 +98,7 @@
                   :row-style="rowStyle"
                   :cell-style="cellStyle"
                   :style="{width: '100%',fontSize:contents.tableContentFontSize,color:contents.tableContentFontColor}"
-                  v-if="isAuth('xueshengchengji','查看')"
+                  v-if="isAuth('xuexiaojxjfzr','查看')"
                   :data="dataList"
                   v-loading="dataListLoading"
                   @selection-change="selectionChangeHandler">
@@ -107,52 +109,52 @@
                            width="50">
           </el-table-column>
           <el-table-column label="索引" v-if="contents.tableIndex" type="index" width="50"/>
-<!--          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="biaoti"
-                           header-align="center"
-                           label="标题">
-            <template slot-scope="scope">
-              {{ scope.row.biaoti }}
-            </template>
-          </el-table-column>-->
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="xueshengzhanghao"
+                           prop="xuexiaojxjfzrgonghao"
                            header-align="center"
-                           label="学生账号">
+                           label="学校奖学金负责人工号">
             <template slot-scope="scope">
-              {{ scope.row.xueshengzhanghao }}
+              {{ scope.row.xuexiaojxjfzrgonghao }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="xueshengxingming"
+                           prop="xuexiaojxjfzrxingming"
                            header-align="center"
-                           label="学生姓名">
+                           label="学校奖学金负责人姓名">
             <template slot-scope="scope">
-              {{ scope.row.xueshengxingming }}
+              {{ scope.row.xuexiaojxjfzrxingming }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="xueshengchengji"
+                           prop="mima"
                            header-align="center"
-                           label="学生综合成绩">
+                           label="密码">
             <template slot-scope="scope">
-              {{ scope.row.xueshengchengji }}
+              {{ scope.row.mima }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="pingyu"
+                           prop="xingbie"
                            header-align="center"
-                           label="评语">
+                           label="性别">
             <template slot-scope="scope">
-              {{ scope.row.pingyu }}
+              {{ scope.row.xingbie }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="dengjishijian"
+                           prop="lianxidianhua"
                            header-align="center"
-                           label="登记时间">
+                           label="联系电话">
             <template slot-scope="scope">
-              {{ scope.row.dengjishijian }}
+              {{ scope.row.lianxidianhua }}
+            </template>
+          </el-table-column>
+          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
+                           prop="jiaoshiyouxiang"
+                           header-align="center"
+                           label="教师邮箱">
+            <template slot-scope="scope">
+              {{ scope.row.jiaoshiyouxiang }}
             </template>
           </el-table-column>
           <el-table-column width="300" :align="contents.tableAlign"
@@ -160,41 +162,41 @@
                            label="操作">
             <template slot-scope="scope">
               <el-button
-                  v-if="isAuth('xueshengchengji','查看') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 1"
+                  v-if="isAuth('xuexiaojxjfzr','查看') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 1"
                   type="success" icon="el-icon-tickets" size="mini" @click="addOrUpdateHandler(scope.row.id,'info')">
                 {{ contents.tableBtnFont == 1 ? '详情' : '' }}
               </el-button>
               <el-button
-                  v-if="isAuth('xueshengchengji','查看') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 2"
+                  v-if="isAuth('xuexiaojxjfzr','查看') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 2"
                   type="success" size="mini" @click="addOrUpdateHandler(scope.row.id,'info')">
                 {{ contents.tableBtnFont == 1 ? '详情' : '' }}<i class="el-icon-tickets el-icon--right"/></el-button>
-              <el-button v-if="isAuth('xueshengchengji','查看') && contents.tableBtnIcon == 0" type="success" size="mini"
+              <el-button v-if="isAuth('xuexiaojxjfzr','查看') && contents.tableBtnIcon == 0" type="success" size="mini"
                          @click="addOrUpdateHandler(scope.row.id,'info')">{{ contents.tableBtnFont == 1 ? '详情' : '' }}
               </el-button>
               <el-button
-                  v-if="isAuth('xueshengchengji','修改') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 1"
+                  v-if="isAuth('xuexiaojxjfzr','修改') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 1"
                   type="primary" icon="el-icon-edit" size="mini" @click="addOrUpdateHandler(scope.row.id)">
                 {{ contents.tableBtnFont == 1 ? '修改' : '' }}
               </el-button>
               <el-button
-                  v-if="isAuth('xueshengchengji','修改') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 2"
+                  v-if="isAuth('xuexiaojxjfzr','修改') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 2"
                   type="primary" size="mini" @click="addOrUpdateHandler(scope.row.id)">
                 {{ contents.tableBtnFont == 1 ? '修改' : '' }}<i class="el-icon-edit el-icon--right"/></el-button>
-              <el-button v-if="isAuth('xueshengchengji','修改') && contents.tableBtnIcon == 0" type="primary" size="mini"
+              <el-button v-if="isAuth('xuexiaojxjfzr','修改') && contents.tableBtnIcon == 0" type="primary" size="mini"
                          @click="addOrUpdateHandler(scope.row.id)">{{ contents.tableBtnFont == 1 ? '修改' : '' }}
               </el-button>
 
 
               <el-button
-                  v-if="isAuth('xueshengchengji','删除') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 1"
+                  v-if="isAuth('xuexiaojxjfzr','删除') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 1"
                   type="danger" icon="el-icon-delete" size="mini" @click="deleteHandler(scope.row.id)">
                 {{ contents.tableBtnFont == 1 ? '删除' : '' }}
               </el-button>
               <el-button
-                  v-if="isAuth('xueshengchengji','删除') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 2"
+                  v-if="isAuth('xuexiaojxjfzr','删除') && contents.tableBtnIcon == 1 && contents.tableBtnIconPosition == 2"
                   type="danger" size="mini" @click="deleteHandler(scope.row.id)">
                 {{ contents.tableBtnFont == 1 ? '删除' : '' }}<i class="el-icon-delete el-icon--right"/></el-button>
-              <el-button v-if="isAuth('xueshengchengji','删除') && contents.tableBtnIcon == 0" type="danger" size="mini"
+              <el-button v-if="isAuth('xuexiaojxjfzr','删除') && contents.tableBtnIcon == 0" type="danger" size="mini"
                          @click="deleteHandler(scope.row.id)">{{ contents.tableBtnFont == 1 ? '删除' : '' }}
               </el-button>
             </template>
@@ -228,7 +230,6 @@ import AddOrUpdate from "./add-or-update";
 export default {
   data() {
     return {
-      xueshengzhanghaoOptions: [],
       searchForm: {
         key: ""
       },
@@ -526,16 +527,6 @@ export default {
     },
 
     init() {
-      this.$http({
-        url: `option/xuesheng/xueshengzhanghao`,
-        method: "get"
-      }).then(({data}) => {
-        if (data && data.code === 0) {
-          this.xueshengzhanghaoOptions = data.data;
-        } else {
-          this.$message.error(data.msg);
-        }
-      });
     },
     search() {
       this.pageIndex = 1;
@@ -549,17 +540,17 @@ export default {
         limit: this.pageSize,
         sort: 'id',
       }
-      if (this.searchForm.biaoti != '' && this.searchForm.biaoti != undefined) {
-        params['biaoti'] = '%' + this.searchForm.biaoti + '%'
+      if (this.searchForm.xuexiaojxjfzrgonghao != '' && this.searchForm.xuexiaojxjfzrgonghao != undefined) {
+        params['xuexiaojxjfzrgonghao'] = '%' + this.searchForm.xuexiaojxjfzrgonghao + '%'
       }
-      if (this.searchForm.xueshengzhanghao != '' && this.searchForm.xueshengzhanghao != undefined) {
-        params['xueshengzhanghao'] = '%' + this.searchForm.xueshengzhanghao + '%'
+      if (this.searchForm.xuexiaojxjfzrxingming != '' && this.searchForm.xuexiaojxjfzrxingming != undefined) {
+        params['xuexiaojxjfzrxingming'] = '%' + this.searchForm.xuexiaojxjfzrxingming + '%'
       }
-      if (this.searchForm.xueshengxingming != '' && this.searchForm.xueshengxingming != undefined) {
-        params['xueshengxingming'] = '%' + this.searchForm.xueshengxingming + '%'
+      if (this.searchForm.lianxidianhua != '' && this.searchForm.lianxidianhua != undefined) {
+        params['lianxidianhua'] = '%' + this.searchForm.lianxidianhua + '%'
       }
       this.$http({
-        url: "xueshengchengji/page",
+        url: "xuexiaojxjfzr/page",
         method: "get",
         params: params
       }).then(({data}) => {
@@ -618,7 +609,7 @@ export default {
         type: "warning"
       }).then(() => {
         this.$http({
-          url: "xueshengchengji/delete",
+          url: "xuexiaojxjfzr/delete",
           method: "post",
           data: ids
         }).then(({data}) => {

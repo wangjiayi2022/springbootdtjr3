@@ -1,6 +1,6 @@
 <template>
   <el-breadcrumb class="app-breadcrumb" separator="⭐"
-                 style="height:50px;backgroundColor:rgba(173,10,255,0.35);borderRadius:20px;borderWidth:2px;borderColor:rgba(255, 215, 0, 1);">
+                 style="height:50px;backgroundColor:rgba(5,1,10,0.35);borderRadius:20px;borderWidth:2px;borderColor:rgba(255, 215, 0, 1);">
     <transition-group name="breadcrumb" class="box"
                       :style="2==1?'justifyContent:flex-start;':2==2?'justifyContent:center;':'justifyContent:flex-end;'">
       <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
@@ -72,7 +72,7 @@ export default {
           el.style.color = "rgba(99, 233, 242, 1)"
         })
         document.querySelectorAll('.app-breadcrumb .el-breadcrumb__inner .no-redirect').forEach(el => {
-          el.style.color = "rgba(152, 245, 134, 1)"
+          el.style.color = "rgba(255, 255, 255, 1)"
         })
 
         let str = "vertical"
@@ -105,7 +105,7 @@ export default {
   }
 
   .no-redirect {
-    color: #97a8be;
+    color: rgb(114, 241, 129);
     cursor: text;
   }
 }

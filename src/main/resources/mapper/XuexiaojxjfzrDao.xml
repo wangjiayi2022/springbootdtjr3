@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.dao.YuanxijxjfzrDao">
+<mapper namespace="com.dao.XuexiaojxjfzrDao">
 
     <!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.entity.YuanxijxjfzrEntity" id="yuanxijxjfzrMap">
-        <result property="yuanxijxjfzrgonghao" column="yuanxijxjfzrgonghao"/>
-        <result property="yuanxijxjfzrxingming" column="yuanxijxjfzrxingming"/>
+    <resultMap type="com.entity.XuexiaojxjfzrEntity" id="xuexiaojxjfzrMap">
+        <result property="xuexiaojxjfzrgonghao" column="xuexiaojxjfzrgonghao"/>
+        <result property="xuexiaojxjfzrxingming" column="xuexiaojxjfzrxingming"/>
         <result property="mima" column="mima"/>
         <result property="xingbie" column="xingbie"/>
         <result property="lianxidianhua" column="lianxidianhua"/>
@@ -14,27 +14,27 @@
     </resultMap>
 
     <select id="selectListVO"
-            resultType="com.entity.vo.YuanxijxjfzrVO">
-        SELECT * FROM yuanxijxjfzr yuanxijxjfzr
+            resultType="com.entity.vo.XuexiaojxjfzrVO">
+        SELECT * FROM xuexiaojxjfzr xuexiaojxjfzr
         <where>1=1 ${ew.sqlSegment}</where>
     </select>
 
     <select id="selectVO"
-            resultType="com.entity.vo.YuanxijxjfzrVO">
-        SELECT yuanxijxjfzr.* FROM yuanxijxjfzr yuanxijxjfzr
+            resultType="com.entity.vo.XuexiaojxjfzrVO">
+        SELECT xuexiaojxjfzr.* FROM xuexiaojxjfzr xuexiaojxjfzr
         <where>1=1 ${ew.sqlSegment}</where>
     </select>
 
     <select id="selectListView"
-            resultType="com.entity.view.YuanxijxjfzrView">
+            resultType="com.entity.view.XuexiaojxjfzrView">
 
-        SELECT yuanxijxjfzr.* FROM yuanxijxjfzr yuanxijxjfzr
+        SELECT xuexiaojxjfzr.* FROM xuexiaojxjfzr xuexiaojxjfzr
         <where>1=1 ${ew.sqlSegment}</where>
     </select>
 
     <select id="selectView"
-            resultType="com.entity.view.YuanxijxjfzrView">
-        SELECT * FROM yuanxijxjfzr yuanxijxjfzr
+            resultType="com.entity.view.XuexiaojxjfzrView">
+        SELECT * FROM xuexiaojxjfzr xuexiaojxjfzr
         <where>1=1 ${ew.sqlSegment}</where>
     </select>
 
