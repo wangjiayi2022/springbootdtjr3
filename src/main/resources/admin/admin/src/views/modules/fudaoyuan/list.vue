@@ -15,18 +15,18 @@
           </el-form-item>
           <el-form-item :label="contents.inputTitle == 1 ? '辅导员姓名' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.instructor_name" placeholder="辅导员姓名" clearable></el-input>
+                      v-model="searchForm.instructorName" placeholder="辅导员姓名" clearable></el-input>
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.instructor_name" placeholder="辅导员姓名" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.instructor_name" placeholder="辅导员姓名"
+                      v-model="searchForm.instructorName" placeholder="辅导员姓名" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.instructorName" placeholder="辅导员姓名"
                       clearable></el-input>
           </el-form-item>
           <el-form-item :label="contents.inputTitle == 1 ? '联系电话' : ''">
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 1" prefix-icon="el-icon-search"
-                      v-model="searchForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+                      v-model="searchForm.phone" placeholder="联系电话" clearable></el-input>
             <el-input v-if="contents.inputIcon == 1 && contents.inputIconPosition == 2" suffix-icon="el-icon-search"
-                      v-model="searchForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
-            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.lianxidianhua" placeholder="联系电话"
+                      v-model="searchForm.phone" placeholder="联系电话" clearable></el-input>
+            <el-input v-if="contents.inputIcon == 0" v-model="searchForm.phone" placeholder="联系电话"
                       clearable></el-input>
           </el-form-item>
           <el-form-item>
@@ -117,11 +117,11 @@
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="instructor_name"
+                           prop="instructorName"
                            header-align="center"
                            label="辅导员姓名">
             <template slot-scope="scope">
-              {{ scope.row.instructor_name }}
+              {{ scope.row.instructorName }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
@@ -141,19 +141,19 @@
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="lianxidianhua"
+                           prop="phone"
                            header-align="center"
                            label="联系电话">
             <template slot-scope="scope">
-              {{ scope.row.lianxidianhua }}
+              {{ scope.row.phone }}
             </template>
           </el-table-column>
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="jiaoshiyouxiang"
+                           prop="email"
                            header-align="center"
                            label="教师邮箱">
             <template slot-scope="scope">
-              {{ scope.row.jiaoshiyouxiang }}
+              {{ scope.row.email }}
             </template>
           </el-table-column>
           <el-table-column width="300" :align="contents.tableAlign"
@@ -542,11 +542,11 @@ export default {
       if (this.searchForm.instructorId != '' && this.searchForm.instructorId != undefined) {
         params['instructorId'] = '%' + this.searchForm.instructorId + '%'
       }
-      if (this.searchForm.instructor_name != '' && this.searchForm.instructor_name != undefined) {
-        params['instructor_name'] = '%' + this.searchForm.instructor_name + '%'
+      if (this.searchForm.instructorName != '' && this.searchForm.instructorName != undefined) {
+        params['instructorName'] = '%' + this.searchForm.instructorName + '%'
       }
-      if (this.searchForm.lianxidianhua != '' && this.searchForm.lianxidianhua != undefined) {
-        params['lianxidianhua'] = '%' + this.searchForm.lianxidianhua + '%'
+      if (this.searchForm.phone != '' && this.searchForm.phone != undefined) {
+        params['phone'] = '%' + this.searchForm.phone + '%'
       }
       this.$http({
         url: "fudaoyuan/page",

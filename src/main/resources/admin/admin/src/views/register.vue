@@ -97,20 +97,21 @@
           <!-- <div v-if="tableName=='fudaoyuan'" class="input-group">
 <div class="label">辅导员工号</div>
 <div class="input-container">
-<input v-model="ruleForm.fudaoyuangonghao" class="input" type="text" placeholder="辅导员工号">
+<input v-model="ruleForm.instructorName" class="input" type="text" placeholder="辅导员工号">
 </div>
 </div> -->
           <el-form-item label="辅导员工号" class="input" v-if="tableName=='fudaoyuan'">
-            <el-input v-model="ruleForm.fudaoyuangonghao" autocomplete="off" placeholder="辅导员工号" type="text"/>
+            <el-input v-model="ruleForm.instructorId
+" autocomplete="off" placeholder="辅导员工号" type="text"/>
           </el-form-item>
           <!-- <div v-if="tableName=='fudaoyuan'" class="input-group">
 <div class="label">辅导员姓名</div>
 <div class="input-container">
-<input v-model="ruleForm.fudaoyuanxingming" class="input" type="text" placeholder="辅导员姓名">
+<input v-model="ruleForm.instructorName" class="input" type="text" placeholder="辅导员姓名">
 </div>
 </div> -->
           <el-form-item label="辅导员姓名" class="input" v-if="tableName=='fudaoyuan'">
-            <el-input v-model="ruleForm.fudaoyuanxingming" autocomplete="off" placeholder="辅导员姓名" type="text"/>
+            <el-input v-model="ruleForm.instructorName" autocomplete="off" placeholder="辅导员姓名" type="text"/>
           </el-form-item>
           <!-- <div v-if="tableName=='fudaoyuan'" class="input-group">
 <div class="label">密码</div>
@@ -223,11 +224,11 @@ export default {
         this.$message.error(`邮箱应输入邮件格式`);
         return
       }
-      if ((!this.ruleForm.fudaoyuangonghao) && `fudaoyuan` == this.tableName) {
+      if ((!this.ruleForm.instructorId) && `fudaoyuan` == this.tableName) {
         this.$message.error(`辅导员工号不能为空`);
         return
       }
-      if ((!this.ruleForm.fudaoyuanxingming) && `fudaoyuan` == this.tableName) {
+      if ((!this.ruleForm.instructorName) && `fudaoyuan` == this.tableName) {
         this.$message.error(`辅导员姓名不能为空`);
         return
       }

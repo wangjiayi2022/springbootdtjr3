@@ -58,7 +58,7 @@ public class FudaoyuanController {
     @IgnoreAuth
     @RequestMapping(value = "/login")
     public R login(String username, String password, String captcha, HttpServletRequest request) {
-        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructorId", username));
+        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructor_id", username));
         if (user == null || !user.getMima().equals(password)) {
             return R.error("账号或密码不正确");
         }
@@ -73,7 +73,7 @@ public class FudaoyuanController {
     @RequestMapping("/register")
     public R register(@RequestBody FudaoyuanEntity fudaoyuan) {
         //ValidatorUtils.validateEntity(fudaoyuan);
-        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructorId", fudaoyuan.getInstructorId()));
+        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructor_id", fudaoyuan.getInstructorId()));
         if (user != null) {
             return R.error("注册用户已存在");
         }
@@ -108,7 +108,7 @@ public class FudaoyuanController {
     @IgnoreAuth
     @RequestMapping(value = "/resetPass")
     public R resetPass(String username, HttpServletRequest request) {
-        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructorId", username));
+        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructor_id", username));
         if (user == null) {
             return R.error("账号不存在");
         }
@@ -186,7 +186,7 @@ public class FudaoyuanController {
     public R save(@RequestBody FudaoyuanEntity fudaoyuan, HttpServletRequest request) {
         fudaoyuan.setId(new Date().getTime() + new Double(Math.floor(Math.random() * 1000)).longValue());
         //ValidatorUtils.validateEntity(fudaoyuan);
-        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructorId", fudaoyuan.getInstructorId()));
+        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructor_id", fudaoyuan.getInstructorId()));
         if (user != null) {
             return R.error("用户已存在");
         }
@@ -203,7 +203,7 @@ public class FudaoyuanController {
     public R add(@RequestBody FudaoyuanEntity fudaoyuan, HttpServletRequest request) {
         fudaoyuan.setId(new Date().getTime() + new Double(Math.floor(Math.random() * 1000)).longValue());
         //ValidatorUtils.validateEntity(fudaoyuan);
-        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructorId",fudaoyuan.getInstructorId()));
+        FudaoyuanEntity user = fudaoyuanService.selectOne(new EntityWrapper<FudaoyuanEntity>().eq("instructor_id",fudaoyuan.getInstructorId()));
         if (user != null) {
             return R.error("用户已存在");
         }

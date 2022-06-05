@@ -35,8 +35,8 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='xuesheng'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          <el-form-item v-if="flag=='xuesheng'" label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone" placeholder="联系电话" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
@@ -65,13 +65,13 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='fudaoyuan'" label="辅导员工号" prop="fudaoyuangonghao">
-            <el-input v-model="ruleForm.fudaoyuangonghao" readonly placeholder="辅导员工号" clearable></el-input>
+          <el-form-item v-if="flag=='fudaoyuan'" label="辅导员工号" prop="instructorId">
+            <el-input v-model="ruleForm.instructorId" readonly placeholder="辅导员工号" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='fudaoyuan'" label="辅导员姓名" prop="fudaoyuanxingming">
-            <el-input v-model="ruleForm.fudaoyuanxingming" placeholder="辅导员姓名" clearable></el-input>
+          <el-form-item v-if="flag=='fudaoyuan'" label="辅导员姓名" prop="instructorName">
+            <el-input v-model="ruleForm.instructorName" placeholder="辅导员姓名" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
@@ -87,13 +87,13 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='fudaoyuan'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          <el-form-item v-if="flag=='fudaoyuan'" label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone" placeholder="联系电话" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='fudaoyuan'" label="教师邮箱" prop="jiaoshiyouxiang">
-            <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
+          <el-form-item v-if="flag=='fudaoyuan'" label="教师邮箱" prop="email">
+            <el-input v-model="ruleForm.email" placeholder="教师邮箱" clearable></el-input>
           </el-form-item>
         </el-col>
 <!--    院系奖学金负责人    -->
@@ -120,13 +120,13 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='yuanxijxjfzr'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone" placeholder="联系电话" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='yuanxijxjfzr'" label="教师邮箱" prop="jiaoshiyouxiang">
-            <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
+          <el-form-item v-if="flag=='yuanxijxjfzr'" label="教师邮箱" prop="email">
+            <el-input v-model="ruleForm.email" placeholder="教师邮箱" clearable></el-input>
           </el-form-item>
         </el-col>
         <!--    学校奖学金负责人    -->
@@ -153,13 +153,13 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone" placeholder="联系电话" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="教师邮箱" prop="jiaoshiyouxiang">
-            <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
+          <el-form-item v-if="flag=='xuexiaojxjfzr'" label="教师邮箱" prop="email">
+            <el-input v-model="ruleForm.email" placeholder="教师邮箱" clearable></el-input>
           </el-form-item>
         </el-col>
         <!--        -->
@@ -186,13 +186,13 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='jiaowuchu'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua" placeholder="联系电话" clearable></el-input>
+          <el-form-item v-if="flag=='jiaowuchu'" label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone" placeholder="联系电话" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item v-if="flag=='jiaowuchu'" label="教师邮箱" prop="jiaoshiyouxiang">
-            <el-input v-model="ruleForm.jiaoshiyouxiang" placeholder="教师邮箱" clearable></el-input>
+          <el-form-item v-if="flag=='jiaowuchu'" label="教师邮箱" prop="email">
+            <el-input v-model="ruleForm.email" placeholder="教师邮箱" clearable></el-input>
           </el-form-item>
         </el-col>
         <el-form-item v-if="flag=='users'" label="用户名" prop="username">
@@ -242,7 +242,7 @@ export default {
   },
   methods: {
     onUpdateHandler() {
-      if ('xuesheng' == this.flag && this.ruleForm.lianxidianhua && (!isMobile(this.ruleForm.lianxidianhua))) {
+      if ('xuesheng' == this.flag && this.ruleForm.phone && (!isMobile(this.ruleForm.phone))) {
         this.$message.error(`联系电话应输入手机格式`);
         return
       }
@@ -250,11 +250,11 @@ export default {
         this.$message.error(`邮箱应输入邮箱格式`);
         return
       }
-      if ((!this.ruleForm.fudaoyuangonghao) && 'fudaoyuan' == this.flag) {
+      if ((!this.ruleForm.instructorId) && 'fudaoyuan' == this.flag) {
         this.$message.error('辅导员工号不能为空');
         return
       }
-      if ((!this.ruleForm.fudaoyuanxingming) && 'fudaoyuan' == this.flag) {
+      if ((!this.ruleForm.instructorName) && 'fudaoyuan' == this.flag) {
         this.$message.error('辅导员姓名不能为空');
         return
       }
@@ -262,11 +262,11 @@ export default {
         this.$message.error('密码不能为空');
         return
       }
-      if ('fudaoyuan' == this.flag && this.ruleForm.lianxidianhua && (!isMobile(this.ruleForm.lianxidianhua))) {
+      if ('fudaoyuan' == this.flag && this.ruleForm.phone && (!isMobile(this.ruleForm.phone))) {
         this.$message.error(`联系电话应输入手机格式`);
         return
       }
-      if ('fudaoyuan' == this.flag && this.ruleForm.jiaoshiyouxiang && (!isEmail(this.ruleForm.jiaoshiyouxiang))) {
+      if ('fudaoyuan' == this.flag && this.ruleForm.email && (!isEmail(this.ruleForm.email))) {
         this.$message.error(`教师邮箱应输入邮箱格式`);
         return
       }
@@ -282,11 +282,11 @@ export default {
         this.$message.error('教务姓名不能为空');
         return
       }
-      if ('jiaowuchu' == this.flag && this.ruleForm.lianxidianhua && (!isMobile(this.ruleForm.lianxidianhua))) {
+      if ('jiaowuchu' == this.flag && this.ruleForm.phone && (!isMobile(this.ruleForm.phone))) {
         this.$message.error(`联系电话应输入手机格式`);
         return
       }
-      if ('jiaowuchu' == this.flag && this.ruleForm.jiaoshiyouxiang && (!isEmail(this.ruleForm.jiaoshiyouxiang))) {
+      if ('jiaowuchu' == this.flag && this.ruleForm.email && (!isEmail(this.ruleForm.email))) {
         this.$message.error(`教师邮箱应输入邮箱格式`);
         return
       }

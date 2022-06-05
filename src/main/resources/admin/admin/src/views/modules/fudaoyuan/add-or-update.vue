@@ -22,13 +22,13 @@
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="辅导员姓名" prop="instructor_name">
-            <el-input v-model="ruleForm.instructor_name"
-                      placeholder="辅导员姓名" clearable :readonly="ro.instructor_name"></el-input>
+          <el-form-item class="input" v-if="type!='info'" label="辅导员姓名" prop="instructorName">
+            <el-input v-model="ruleForm.instructorName"
+                      placeholder="辅导员姓名" clearable :readonly="ro.instructorName"></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" label="辅导员姓名" prop="instructor_name">
-              <el-input v-model="ruleForm.instructor_name"
+            <el-form-item class="input" label="辅导员姓名" prop="instructorName">
+              <el-input v-model="ruleForm.instructorName"
                         placeholder="辅导员姓名" readonly></el-input>
             </el-form-item>
           </div>
@@ -64,25 +64,25 @@
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua"
-                      placeholder="联系电话" clearable :readonly="ro.lianxidianhua"></el-input>
+          <el-form-item class="input" v-if="type!='info'" label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone"
+                      placeholder="联系电话" clearable :readonly="ro.phone"></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" label="联系电话" prop="lianxidianhua">
-              <el-input v-model="ruleForm.lianxidianhua"
+            <el-form-item class="input" label="联系电话" prop="phone">
+              <el-input v-model="ruleForm.phone"
                         placeholder="联系电话" readonly></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="教师邮箱" prop="jiaoshiyouxiang">
-            <el-input v-model="ruleForm.jiaoshiyouxiang"
-                      placeholder="教师邮箱" clearable :readonly="ro.jiaoshiyouxiang"></el-input>
+          <el-form-item class="input" v-if="type!='info'" label="教师邮箱" prop="email">
+            <el-input v-model="ruleForm.email"
+                      placeholder="教师邮箱" clearable :readonly="ro.email"></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" label="教师邮箱" prop="jiaoshiyouxiang">
-              <el-input v-model="ruleForm.jiaoshiyouxiang"
+            <el-form-item class="input" label="教师邮箱" prop="email">
+              <el-input v-model="ruleForm.email"
                         placeholder="教师邮箱" readonly></el-input>
             </el-form-item>
           </div>
@@ -248,36 +248,36 @@ export default {
       type: '',
       ro: {
         instructorId: false,
-        instructor_name: false,
+        instructorName: false,
         mima: false,
         xingbie: false,
-        lianxidianhua: false,
-        jiaoshiyouxiang: false,
+        phone: false,
+        email: false,
       },
       ruleForm: {
         instructorId: '',
-        instructor_name: '',
+        instructorName: '',
         mima: '',
         xingbie: '',
-        lianxidianhua: '',
-        jiaoshiyouxiang: '',
+        phone: '',
+        email: '',
       },
       xingbieOptions: [],
       rules: {
         instructorId: [
           {required: true, message: '辅导员工号不能为空', trigger: 'blur'},
         ],
-        instructor_name: [
+        instructorName: [
           {required: true, message: '辅导员姓名不能为空', trigger: 'blur'},
         ],
         mima: [
           {required: true, message: '密码不能为空', trigger: 'blur'},
         ],
         xingbie: [],
-        lianxidianhua: [
+        phone: [
           {validator: validateMobile, trigger: 'blur'},
         ],
-        jiaoshiyouxiang: [
+        email: [
           {validator: validateEmail, trigger: 'blur'},
         ],
       }
@@ -310,9 +310,9 @@ export default {
             this.ro.instructorId = true;
             continue;
           }
-          if (o == 'instructor_name') {
-            this.ruleForm.instructor_name = obj[o];
-            this.ro.instructor_name = true;
+          if (o == 'instructorName') {
+            this.ruleForm.instructorName = obj[o];
+            this.ro.instructorName = true;
             continue;
           }
           if (o == 'mima') {
@@ -325,14 +325,14 @@ export default {
             this.ro.xingbie = true;
             continue;
           }
-          if (o == 'lianxidianhua') {
-            this.ruleForm.lianxidianhua = obj[o];
-            this.ro.lianxidianhua = true;
+          if (o == 'phone') {
+            this.ruleForm.phone = obj[o];
+            this.ro.phone = true;
             continue;
           }
-          if (o == 'jiaoshiyouxiang') {
-            this.ruleForm.jiaoshiyouxiang = obj[o];
-            this.ro.jiaoshiyouxiang = true;
+          if (o == 'email') {
+            this.ruleForm.email = obj[o];
+            this.ro.email = true;
             continue;
           }
         }

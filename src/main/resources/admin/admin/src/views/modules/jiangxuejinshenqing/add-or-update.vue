@@ -365,7 +365,7 @@ export default {
         shenqingbiao: false,
         shenqingshijian: false,
         jutijiatingqingkuang: false,
-        sfsh: false,
+        fsfsh: false,
         shhf: false,
       },
       ruleForm: {
@@ -402,7 +402,7 @@ export default {
         shenqingbiao: [],
         shenqingshijian: [],
         jutijiatingqingkuang: [],
-        sfsh: [],
+        fsfsh: [],
         shhf: [],
       }
     };

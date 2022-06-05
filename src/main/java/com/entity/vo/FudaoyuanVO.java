@@ -47,13 +47,13 @@ public class FudaoyuanVO implements Serializable {
      * 联系电话
      */
 
-    private String lianxidianhua;
+    private String phone;
 
     /**
      * 教师邮箱
      */
 
-    private String jiaoshiyouxiang;
+    private String email;
 
 
     /**
@@ -108,15 +108,15 @@ public class FudaoyuanVO implements Serializable {
      * 设置：联系电话
      */
 
-    public void setLianxidianhua(String lianxidianhua) {
-        this.lianxidianhua = lianxidianhua;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     /**
      * 获取：联系电话
      */
-    public String getLianxidianhua() {
-        return lianxidianhua;
+    public String getPhone() {
+        return phone;
     }
 
 
@@ -124,15 +124,15 @@ public class FudaoyuanVO implements Serializable {
      * 设置：教师邮箱
      */
 
-    public void setJiaoshiyouxiang(String jiaoshiyouxiang) {
-        this.jiaoshiyouxiang = jiaoshiyouxiang;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
      * 获取：教师邮箱
      */
-    public String getJiaoshiyouxiang() {
-        return jiaoshiyouxiang;
+    public String getEmail() {
+        return email;
     }
 
 }

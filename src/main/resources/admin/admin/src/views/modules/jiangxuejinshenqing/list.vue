@@ -225,23 +225,65 @@
                            header-align="center"
                            label="审核回复">
           </el-table-column>
+          <!--     辅导员审核状态     -->
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
-                           prop="sfsh"
+                           prop="fsfsh"
                            header-align="center"
-                           label="审核状态">
+                           label="辅导员审核状态">
             <template slot-scope="scope">
-              <span style="margin-right:10px">{{ scope.row.sfsh == '是' ? '通过' : '未通过' }}</span>
+              <span style="margin-right:10px">{{ scope.row.fsfsh == '是' ? '通过' : '未通过' }}</span>
             </template>
           </el-table-column>
+          <!--     院系奖学金负责人审核状态     -->
+          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
+                           prop="fsfsh"
+                           header-align="center"
+                           label="院系奖学金负责人审核状态">
+            <template slot-scope="scope">
+              <span style="margin-right:10px">{{ scope.row.ysfsh == '是' ? '通过' : '未通过' }}</span>
+            </template>
+          </el-table-column>
+          <!--     学校奖学金负责人审核状态     -->
+          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
+                           prop="fsfsh"
+                           header-align="center"
+                           label="学校奖学金负责人审核状态">
+            <template slot-scope="scope">
+              <span style="margin-right:10px">{{ scope.row.xsfsh == '是' ? '通过' : '未通过' }}</span>
+            </template>
+          </el-table-column>
+          <!--     辅导员审核     -->
           <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
                            v-if="isAuth('jiangxuejinshenqing','审核')"
-                           prop="sfsh"
+
+                           prop="fsfsh"
                            header-align="center"
                            label="审核">
             <template slot-scope="scope">
               <el-button type="text" icon="el-icon-edit" size="small" @click="shDialog(scope.row)">审核</el-button>
             </template>
           </el-table-column>
+          <!--     院系奖学金负责人审核     -->
+          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
+                           v-if="isAuth('jiangxuejinshenqing','审核')"
+                           prop="ysfsh"
+                           header-align="center"
+                           label="审核">
+            <template slot-scope="scope">
+              <el-button type="text" icon="el-icon-edit" size="small" @click="shDialog(scope.row)">审核</el-button>
+            </template>
+          </el-table-column>
+          <!--     学校奖学金负责人审核     -->
+          <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"
+                           v-if="isAuth('jiangxuejinshenqing','审核')"
+                           prop="xsfsh"
+                           header-align="center"
+                           label="审核">
+            <template slot-scope="scope">
+              <el-button type="text" icon="el-icon-edit" size="small" @click="shDialog(scope.row)">审核</el-button>
+            </template>
+          </el-table-column>
+
           <el-table-column width="300" :align="contents.tableAlign"
                            header-align="center"
                            label="操作">
@@ -312,11 +354,11 @@
 
     <el-dialog
         title="审核"
-        :visible.sync="sfshVisiable"
+        :visible.sync="fsfshVisiable"
         width="50%">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="审核状态">
-          <el-select v-model="shForm.sfsh" placeholder="审核状态">
+          <el-select v-model="shForm.fsfsh" placeholder="审核状态">
             <el-option label="通过" value="是"></el-option>
             <el-option label="不通过" value="否"></el-option>
           </el-select>
@@ -349,7 +391,9 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       showFlag: true,
-      sfshVisiable: false,
+      fsfshVisiable: false,
+      ysfshVisiable: false,
+      xfshVisiable: false,
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag: false,
@@ -706,7 +750,7 @@ export default {
     // 查看评论
     // 审核窗口
     shDialog(row) {
-      this.sfshVisiable = !this.sfshVisiable;
+      this.fsfshVisiable = !this.fsfshVisiable;
       if (row) {
         this.shForm = {
           jiangxuejinmingcheng: row.jiangxuejinmingcheng,
@@ -723,7 +767,9 @@ export default {
           shenqingbiao: row.shenqingbiao,
           shenqingshijian: row.shenqingshijian,
           jutijiatingqingkuang: row.jutijiatingqingkuang,
-          sfsh: row.sfsh,
+          fsfsh: row.fsfsh,
+          ysfsh: row.ysfsh,
+          xsfsh: row.xsfsh,
           shhf: row.shhf,
           id: row.id
         }

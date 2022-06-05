@@ -109,7 +109,7 @@ public class JiangxuejinshenqingVO implements Serializable {
      * 是否审核
      */
 
-    private String sfsh;
+    private String fsfsh;
 
     /**
      * 审核回复
@@ -330,15 +330,15 @@ public class JiangxuejinshenqingVO implements Serializable {
      * 设置：是否审核
      */
 
-    public void setSfsh(String sfsh) {
-        this.sfsh = sfsh;
+    public void setFsfsh(String fsfsh) {
+        this.fsfsh = fsfsh;
     }
 
     /**
      * 获取：是否审核
      */
-    public String getSfsh() {
-        return sfsh;
+    public String getFsfsh() {
+        return fsfsh;
     }
 
 

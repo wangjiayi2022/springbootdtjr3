@@ -50,14 +50,14 @@ DROP TABLE IF EXISTS `fudaoyuan`;
 CREATE TABLE `fudaoyuan` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `addtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `fudaoyuangonghao` varchar(200) NOT NULL COMMENT '辅导员工号',
-  `fudaoyuanxingming` varchar(200) NOT NULL COMMENT '辅导员姓名',
+  `instructor_id` varchar(200) NOT NULL COMMENT '辅导员工号',
+  `instructor_name` varchar(200) NOT NULL COMMENT '辅导员姓名',
   `mima` varchar(200) NOT NULL COMMENT '密码',
   `xingbie` varchar(200) DEFAULT NULL COMMENT '性别',
   `lianxidianhua` varchar(200) DEFAULT NULL COMMENT '联系电话',
   `jiaoshiyouxiang` varchar(200) DEFAULT NULL COMMENT '教师邮箱',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `fudaoyuangonghao` (`fudaoyuangonghao`)
+  UNIQUE KEY `instructor_id` (`instructor_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1611802800520 DEFAULT CHARSET=utf8 COMMENT='辅导员';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
